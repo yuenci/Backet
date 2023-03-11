@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Backet
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             AddCard();
@@ -47,6 +47,12 @@ namespace Backet
                 taskCard.Margin = new Padding(0, 0, 11, 0);
                 CardContainer.Controls.Add(taskCard);
             }
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            Submit submitForm = new Submit();
+            submitForm.ShowDialog();
         }
     }
 }

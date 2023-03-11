@@ -1,6 +1,6 @@
 ﻿namespace Backet
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.uiPanel7 = new Sunny.UI.UIPanel();
+            this.Settings = new Sunny.UI.UIAvatar();
             this.AddBtn = new Sunny.UI.UIAvatar();
             this.uiPanel8 = new Sunny.UI.UIPanel();
-            this.MenuBtn = new Sunny.UI.UIAvatar();
-            this.SearchBtn = new Sunny.UI.UIAvatar();
             this.SearchTextBox = new Sunny.UI.UITextBox();
-            this.Settings = new Sunny.UI.UIAvatar();
+            this.SearchBtn = new Sunny.UI.UIAvatar();
+            this.MenuBtn = new Sunny.UI.UIAvatar();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.TaskNum = new Sunny.UI.UIAvatar();
             this.TypeComboBox = new Sunny.UI.UIComboBox();
@@ -59,7 +59,24 @@
             this.uiPanel7.Size = new System.Drawing.Size(50, 50);
             this.uiPanel7.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel7.TabIndex = 2;
+            this.uiPanel7.Text = null;
             this.uiPanel7.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Settings
+            // 
+            this.Settings.AvatarSize = 55;
+            this.Settings.BackColor = System.Drawing.Color.Transparent;
+            this.Settings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Settings.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Settings.Location = new System.Drawing.Point(3, 5);
+            this.Settings.MinimumSize = new System.Drawing.Size(1, 1);
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(40, 40);
+            this.Settings.Style = Sunny.UI.UIStyle.Custom;
+            this.Settings.Symbol = 103;
+            this.Settings.SymbolSize = 35;
+            this.Settings.TabIndex = 9;
+            this.Settings.Text = "uiAvatar2";
             // 
             // AddBtn
             // 
@@ -78,6 +95,7 @@
             this.AddBtn.SymbolSize = 35;
             this.AddBtn.TabIndex = 6;
             this.AddBtn.Text = "uiAvatar1";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // uiPanel8
             // 
@@ -95,58 +113,17 @@
             this.uiPanel8.Size = new System.Drawing.Size(890, 50);
             this.uiPanel8.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel8.TabIndex = 3;
+            this.uiPanel8.Text = null;
             this.uiPanel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // MenuBtn
-            // 
-            this.MenuBtn.AvatarSize = 55;
-            this.MenuBtn.BackColor = System.Drawing.Color.Transparent;
-            this.MenuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuBtn.FillColor = System.Drawing.Color.Transparent;
-            this.MenuBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MenuBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
-            this.MenuBtn.Location = new System.Drawing.Point(3, 7);
-            this.MenuBtn.MinimumSize = new System.Drawing.Size(1, 1);
-            this.MenuBtn.Name = "MenuBtn";
-            this.MenuBtn.Size = new System.Drawing.Size(40, 40);
-            this.MenuBtn.Style = Sunny.UI.UIStyle.Custom;
-            this.MenuBtn.Symbol = 97;
-            this.MenuBtn.SymbolSize = 40;
-            this.MenuBtn.TabIndex = 7;
-            this.MenuBtn.Text = "uiAvatar2";
-            // 
-            // SearchBtn
-            // 
-            this.SearchBtn.AvatarSize = 55;
-            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
-            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchBtn.FillColor = System.Drawing.Color.Transparent;
-            this.SearchBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SearchBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
-            this.SearchBtn.Location = new System.Drawing.Point(840, 3);
-            this.SearchBtn.MinimumSize = new System.Drawing.Size(1, 1);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(40, 40);
-            this.SearchBtn.Style = Sunny.UI.UIStyle.Custom;
-            this.SearchBtn.Symbol = 85;
-            this.SearchBtn.SymbolSize = 25;
-            this.SearchBtn.TabIndex = 8;
-            this.SearchBtn.Text = "uiAvatar1";
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.ButtonRectColor = System.Drawing.Color.Transparent;
-            this.SearchTextBox.ButtonRectHoverColor = System.Drawing.Color.Transparent;
-            this.SearchTextBox.ButtonRectPressColor = System.Drawing.Color.Transparent;
             this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.SearchTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTextBox.ForeColor = System.Drawing.Color.Silver;
             this.SearchTextBox.Location = new System.Drawing.Point(50, 10);
             this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchTextBox.MinimumSize = new System.Drawing.Size(1, 16);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.RectColor = System.Drawing.Color.Transparent;
             this.SearchTextBox.ShowText = false;
             this.SearchTextBox.Size = new System.Drawing.Size(739, 29);
             this.SearchTextBox.Style = Sunny.UI.UIStyle.Custom;
@@ -157,23 +134,37 @@
             this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
             // 
-            // Settings
+            // SearchBtn
             // 
-            this.Settings.AvatarSize = 55;
-            this.Settings.BackColor = System.Drawing.Color.Transparent;
-            this.Settings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Settings.FillColor = System.Drawing.Color.Transparent;
-            this.Settings.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
-            this.Settings.Location = new System.Drawing.Point(3, 5);
-            this.Settings.MinimumSize = new System.Drawing.Size(1, 1);
-            this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(40, 40);
-            this.Settings.Style = Sunny.UI.UIStyle.Custom;
-            this.Settings.Symbol = 103;
-            this.Settings.SymbolSize = 35;
-            this.Settings.TabIndex = 9;
-            this.Settings.Text = "uiAvatar2";
+            this.SearchBtn.AvatarSize = 55;
+            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SearchBtn.Location = new System.Drawing.Point(840, 3);
+            this.SearchBtn.MinimumSize = new System.Drawing.Size(1, 1);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(40, 40);
+            this.SearchBtn.Style = Sunny.UI.UIStyle.Custom;
+            this.SearchBtn.Symbol = 85;
+            this.SearchBtn.SymbolSize = 25;
+            this.SearchBtn.TabIndex = 8;
+            this.SearchBtn.Text = "uiAvatar1";
+            // 
+            // MenuBtn
+            // 
+            this.MenuBtn.AvatarSize = 55;
+            this.MenuBtn.BackColor = System.Drawing.Color.Transparent;
+            this.MenuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MenuBtn.Location = new System.Drawing.Point(3, 7);
+            this.MenuBtn.MinimumSize = new System.Drawing.Size(1, 1);
+            this.MenuBtn.Name = "MenuBtn";
+            this.MenuBtn.Size = new System.Drawing.Size(40, 40);
+            this.MenuBtn.Style = Sunny.UI.UIStyle.Custom;
+            this.MenuBtn.Symbol = 97;
+            this.MenuBtn.SymbolSize = 40;
+            this.MenuBtn.TabIndex = 7;
+            this.MenuBtn.Text = "uiAvatar2";
             // 
             // uiLabel1
             // 
@@ -251,7 +242,7 @@
             this.CardContainer.Size = new System.Drawing.Size(929, 515);
             this.CardContainer.TabIndex = 11;
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -266,7 +257,8 @@
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.uiPanel7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Backet";
             this.uiPanel7.ResumeLayout(false);
             this.uiPanel8.ResumeLayout(false);
