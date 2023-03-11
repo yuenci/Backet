@@ -60,7 +60,7 @@
             this.uiPanel1.Radius = 10;
             this.uiPanel1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(280, 173);
+            this.uiPanel1.Size = new System.Drawing.Size(280, 230);
             this.uiPanel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel1.TabIndex = 1;
             this.uiPanel1.Text = "Panel";
@@ -77,7 +77,7 @@
             this.uiPanel2.Radius = 10;
             this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.uiPanel2.RectSize = 2;
-            this.uiPanel2.Size = new System.Drawing.Size(280, 173);
+            this.uiPanel2.Size = new System.Drawing.Size(280, 230);
             this.uiPanel2.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel2.TabIndex = 2;
             this.uiPanel2.Text = "Panel";
@@ -94,7 +94,7 @@
             this.uiPanel3.Radius = 10;
             this.uiPanel3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.uiPanel3.RectSize = 2;
-            this.uiPanel3.Size = new System.Drawing.Size(280, 173);
+            this.uiPanel3.Size = new System.Drawing.Size(280, 230);
             this.uiPanel3.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel3.TabIndex = 2;
             this.uiPanel3.Text = "Panel";
@@ -104,14 +104,14 @@
             // 
             this.uiPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.uiPanel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel4.Location = new System.Drawing.Point(684, 367);
+            this.uiPanel4.Location = new System.Drawing.Point(684, 416);
             this.uiPanel4.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel4.Name = "uiPanel4";
             this.uiPanel4.Radius = 10;
             this.uiPanel4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.uiPanel4.RectSize = 2;
-            this.uiPanel4.Size = new System.Drawing.Size(280, 173);
+            this.uiPanel4.Size = new System.Drawing.Size(280, 230);
             this.uiPanel4.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel4.TabIndex = 5;
             this.uiPanel4.Text = "Panel";
@@ -121,14 +121,14 @@
             // 
             this.uiPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.uiPanel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel5.Location = new System.Drawing.Point(379, 373);
+            this.uiPanel5.Location = new System.Drawing.Point(379, 416);
             this.uiPanel5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
             this.uiPanel5.Radius = 10;
             this.uiPanel5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.uiPanel5.RectSize = 2;
-            this.uiPanel5.Size = new System.Drawing.Size(280, 173);
+            this.uiPanel5.Size = new System.Drawing.Size(280, 230);
             this.uiPanel5.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel5.TabIndex = 4;
             this.uiPanel5.Text = "Panel";
@@ -138,14 +138,14 @@
             // 
             this.uiPanel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.uiPanel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel6.Location = new System.Drawing.Point(77, 367);
+            this.uiPanel6.Location = new System.Drawing.Point(77, 416);
             this.uiPanel6.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
             this.uiPanel6.Radius = 10;
             this.uiPanel6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.uiPanel6.RectSize = 2;
-            this.uiPanel6.Size = new System.Drawing.Size(280, 173);
+            this.uiPanel6.Size = new System.Drawing.Size(280, 230);
             this.uiPanel6.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel6.TabIndex = 3;
             this.uiPanel6.Text = "Panel";
@@ -247,6 +247,7 @@
             this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.SearchTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTextBox.ForeColor = System.Drawing.Color.Silver;
             this.SearchTextBox.Location = new System.Drawing.Point(50, 10);
             this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchTextBox.MinimumSize = new System.Drawing.Size(1, 16);
@@ -353,7 +354,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1034, 561);
+            this.ClientSize = new System.Drawing.Size(1034, 661);
             this.Controls.Add(this.uiAvatar1);
             this.Controls.Add(this.TypeComboBox);
             this.Controls.Add(this.TaskNum);
