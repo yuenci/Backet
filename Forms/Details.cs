@@ -63,16 +63,16 @@ namespace Backet.Forms
             this.detailsInfo = Tools.GetRepoDetailsInfo(this.taskCard.repoName);
             descriptionLable.Text = this.detailsInfo[0];
             homepageLabel.Text = this.detailsInfo[1];
-            starLabel.Text = this.detailsInfo[2];
+            issueLable.Text = this.detailsInfo[2];
             languageLabel.Text = this.detailsInfo[3];
-            issueLabel.Text = this.detailsInfo[4];
+            starLabel.Text = this.detailsInfo[4];
         }
 
         private void InitLableEvent()
         {
             repoName.Click += new EventHandler(Reponame_Click);
             
-            issueLabel.Click += new EventHandler(Issue_Click);
+            starLabel.Click += new EventHandler(Issue_Click);
             issueTextLabel.Click += new EventHandler(Issue_Click);
 
 
@@ -139,8 +139,9 @@ namespace Backet.Forms
 
             if (result == DialogResult.Yes)
             {
-                Main.instance.InitCards();
-                this.Close();
+                Console.WriteLine("deleted");
+               /* Main.instance.InitCards();
+                this.Close();*/
             }
             else
             {

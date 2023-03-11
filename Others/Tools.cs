@@ -335,7 +335,7 @@ namespace Backet
 
         private static string GetBoolFromJson(string input)
         {
-            Console.WriteLine(input);
+            //Console.WriteLine(input);
             if (input.Contains("false"))
             {
                 return "false";

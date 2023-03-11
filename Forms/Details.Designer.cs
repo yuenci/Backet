@@ -41,11 +41,11 @@
             this.homepageTextLabel = new Sunny.UI.UILabel();
             this.statusLabel = new Sunny.UI.UILabel();
             this.languageLabel = new Sunny.UI.UILabel();
-            this.starLabel = new Sunny.UI.UILabel();
-            this.issueLabel = new Sunny.UI.UILabel();
+            this.issueLable = new Sunny.UI.UILabel();
             this.homepageLabel = new Sunny.UI.UILabel();
             this.DeleteButton = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.starLabel = new Sunny.UI.UISymbolButton();
             this.SuspendLayout();
             // 
             // complereBtn
@@ -215,28 +215,16 @@
             this.languageLabel.Text = "Desciption";
             this.languageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // starLabel
+            // issueLable
             // 
-            this.starLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.starLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.starLabel.Location = new System.Drawing.Point(261, 344);
-            this.starLabel.Name = "starLabel";
-            this.starLabel.Size = new System.Drawing.Size(211, 31);
-            this.starLabel.TabIndex = 18;
-            this.starLabel.Text = "Desciption";
-            this.starLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // issueLabel
-            // 
-            this.issueLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.issueLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.issueLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.issueLabel.Location = new System.Drawing.Point(261, 386);
-            this.issueLabel.Name = "issueLabel";
-            this.issueLabel.Size = new System.Drawing.Size(211, 31);
-            this.issueLabel.TabIndex = 19;
-            this.issueLabel.Text = "Desciption";
-            this.issueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.issueLable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.issueLable.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.issueLable.Location = new System.Drawing.Point(261, 385);
+            this.issueLable.Name = "issueLable";
+            this.issueLable.Size = new System.Drawing.Size(211, 31);
+            this.issueLable.TabIndex = 0;
+            this.issueLable.Text = "Desciption";
+            this.issueLable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // homepageLabel
             // 
@@ -289,17 +277,36 @@
             this.uiSymbolButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolButton1.Click += new System.EventHandler(this.uiSymbolButton1_Click);
             // 
+            // starLabel
+            // 
+            this.starLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.starLabel.FillColor = System.Drawing.Color.Transparent;
+            this.starLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.starLabel.ForeColor = System.Drawing.Color.Black;
+            this.starLabel.Location = new System.Drawing.Point(386, 343);
+            this.starLabel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.starLabel.Name = "starLabel";
+            this.starLabel.RectColor = System.Drawing.Color.Transparent;
+            this.starLabel.Size = new System.Drawing.Size(84, 35);
+            this.starLabel.Style = Sunny.UI.UIStyle.Custom;
+            this.starLabel.Symbol = 61445;
+            this.starLabel.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(197)))), ((int)(((byte)(79)))));
+            this.starLabel.TabIndex = 23;
+            this.starLabel.Text = "0";
+            this.starLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.starLabel.TipsFont = new System.Drawing.Font("Segoe UI", 12F);
+            // 
             // Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(484, 561);
+            this.Controls.Add(this.starLabel);
             this.Controls.Add(this.uiSymbolButton1);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.homepageLabel);
-            this.Controls.Add(this.issueLabel);
-            this.Controls.Add(this.starLabel);
+            this.Controls.Add(this.issueLable);
             this.Controls.Add(this.languageLabel);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.homepageTextLabel);
@@ -334,10 +341,10 @@
         private Sunny.UI.UILabel homepageTextLabel;
         private Sunny.UI.UILabel statusLabel;
         private Sunny.UI.UILabel languageLabel;
-        private Sunny.UI.UILabel starLabel;
-        private Sunny.UI.UILabel issueLabel;
+        private Sunny.UI.UILabel issueLable;
         private Sunny.UI.UILabel homepageLabel;
         private Sunny.UI.UISymbolButton DeleteButton;
         private Sunny.UI.UISymbolButton uiSymbolButton1;
+        private Sunny.UI.UISymbolButton starLabel;
     }
 }

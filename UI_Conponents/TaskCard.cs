@@ -106,11 +106,20 @@ namespace Backet.UI_Conponents
         private void InitProcessBar()
         {
             string todoPath = GetLocalPath() + "\\TODO.md";
+
+            if (cardInfo[6].Contains("true"))
+            {
+                ProcessBar.Value = 100;
+                return;
+            }
+
+            
             if (!Tools.IsPathExist(todoPath))
             {
                 ProcessBar.Value = 0;
                 return;
             }
+            
             
             string[] data = File.ReadAllLines(todoPath);
             int allTodos = data.Length;

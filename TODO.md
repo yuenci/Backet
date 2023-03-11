@@ -1,8 +1,8 @@
 - [x] Add search function
 - [x] Add combo Box select
 - [ ] Update data after modify rope data
-- [ ] Update panel  after add new repo card
+- [x] Update panel  after add new repo card
 - [ ] Language display with photo
-- [ ] Add star to star part
+- [x] Add star to star part
 - [x] Format datetime
 - [ ] Sort the cards(created date, update date, alpha)
