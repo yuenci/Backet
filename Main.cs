@@ -85,11 +85,7 @@ namespace Backet
             string[] data = Tools.GetDataFromRepoName("Java-Car-Rental-System");
             Console.WriteLine(data[10]);
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-    
-        }
+        
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {

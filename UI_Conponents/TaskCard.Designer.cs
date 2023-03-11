@@ -76,17 +76,15 @@
             // 
             // ProcessBar
             // 
-            this.ProcessBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ProcessBar.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ProcessBar.Location = new System.Drawing.Point(16, 169);
             this.ProcessBar.MinimumSize = new System.Drawing.Size(70, 3);
             this.ProcessBar.Name = "ProcessBar";
-            this.ProcessBar.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(153)))), ((int)(((byte)(56)))));
+            this.ProcessBar.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(154)))), ((int)(((byte)(54)))));
             this.ProcessBar.Size = new System.Drawing.Size(249, 7);
             this.ProcessBar.Style = Sunny.UI.UIStyle.Custom;
             this.ProcessBar.TabIndex = 7;
-            this.ProcessBar.Text = "uiProcessBar1";
-            this.ProcessBar.Value = 50;
+            this.ProcessBar.Text = "ProcessBar";
             // 
             // StartDate
             // 

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.complereBtn = new Sunny.UI.UISymbolButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MoreOptBtn = new Sunny.UI.UISymbolButton();
             this.repoName = new Sunny.UI.UILabel();
             this.descriptionLable = new Sunny.UI.UILabel();
@@ -46,7 +45,7 @@
             this.issueLabel = new Sunny.UI.UILabel();
             this.homepageLabel = new Sunny.UI.UILabel();
             this.DeleteButton = new Sunny.UI.UISymbolButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
             this.SuspendLayout();
             // 
             // complereBtn
@@ -68,16 +67,6 @@
             this.complereBtn.Text = "Completed";
             this.complereBtn.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.complereBtn.Click += new System.EventHandler(this.complereBtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Backet.Properties.Resources.logoRoundCorner;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // MoreOptBtn
             // 
@@ -117,6 +106,7 @@
             this.descriptionLable.Size = new System.Drawing.Size(460, 60);
             this.descriptionLable.TabIndex = 8;
             this.descriptionLable.Text = "Description";
+            this.descriptionLable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLine1
             // 
@@ -278,6 +268,26 @@
             this.DeleteButton.TabIndex = 21;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // uiSymbolButton1
+            // 
+            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.uiSymbolButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSymbolButton1.ForeColor = System.Drawing.Color.Gray;
+            this.uiSymbolButton1.Location = new System.Drawing.Point(12, 12);
+            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton1.Name = "uiSymbolButton1";
+            this.uiSymbolButton1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
+            this.uiSymbolButton1.RectSize = 2;
+            this.uiSymbolButton1.Size = new System.Drawing.Size(40, 40);
+            this.uiSymbolButton1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiSymbolButton1.Symbol = 57399;
+            this.uiSymbolButton1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.uiSymbolButton1.TabIndex = 22;
+            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton1.Click += new System.EventHandler(this.uiSymbolButton1_Click);
             // 
             // Details
             // 
@@ -285,6 +295,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(484, 561);
+            this.Controls.Add(this.uiSymbolButton1);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.homepageLabel);
             this.Controls.Add(this.issueLabel);
@@ -302,18 +313,14 @@
             this.Controls.Add(this.repoName);
             this.Controls.Add(this.MoreOptBtn);
             this.Controls.Add(this.complereBtn);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Details";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Sunny.UI.UISymbolButton complereBtn;
         private Sunny.UI.UISymbolButton MoreOptBtn;
         private Sunny.UI.UILabel repoName;
@@ -331,5 +338,6 @@
         private Sunny.UI.UILabel issueLabel;
         private Sunny.UI.UILabel homepageLabel;
         private Sunny.UI.UISymbolButton DeleteButton;
+        private Sunny.UI.UISymbolButton uiSymbolButton1;
     }
 }

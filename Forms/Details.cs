@@ -125,5 +125,16 @@ namespace Backet.Forms
             string[] newData = list.ToArray();
             Tools.SaveDataToRepoFile(repoName, newData);
         }
+
+        private void uiSymbolButton1_Click(object sender, EventArgs e)
+        {
+            string url = GetRepoUrl() + "/settings";
+            Process.Start(url);
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            Tools.DeleteRepoFile(this.taskCard.repoName);
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Backet.UI_Conponents
 {
@@ -28,6 +29,7 @@ namespace Backet.UI_Conponents
             InitBackground();
             InitLabels();
             InitIcons();
+            InitProcessBar();
             Main.instance.AddNameAndStatusToMap(repoName, cardInfo[6]);
         }
         private void InitBackground()
@@ -40,8 +42,8 @@ namespace Backet.UI_Conponents
         private void InitLabels()
         {
             TaskName.Text = this.repoName;
-            StartDate.Text = this.cardInfo[2];
-            UpdateDate.Text = this.cardInfo[3];
+            StartDate.Text = "Start: " + Tools.ISO8601ToDDMMYY(this.cardInfo[2]);
+            UpdateDate.Text ="Last updated" +  Tools.ISO8601ToDDMMYY(this.cardInfo[3]);
         }
         private void InitIcons()
         {
@@ -55,7 +57,6 @@ namespace Backet.UI_Conponents
             {
                 AddIcons("file");
             }
-            
             
         }
 
@@ -101,6 +102,31 @@ namespace Backet.UI_Conponents
             IconsPanel.Controls.Add(pictureBox);
         }
 
+
+        private void InitProcessBar()
+        {
+            string todoPath = GetLocalPath() + "\\TODO.md";
+            if (!Tools.IsPathExist(todoPath))
+            {
+                ProcessBar.Value = 0;
+                return;
+            }
+            
+            string[] data = File.ReadAllLines(todoPath);
+            int allTodos = data.Length;
+            int done = 0;
+            foreach(string line in data)
+            {
+                if (line.Contains("- [x]"))
+                {
+                    done++;
+                }
+            }
+            int result = (int)(((double)done / allTodos) * 100);
+            ProcessBar.Value = result;
+        }
+
+
         private void TaskName_Click(object sender, EventArgs e)
         {
             Details details = new Details();
@@ -123,9 +149,14 @@ namespace Backet.UI_Conponents
 
         private void File_icon_Click(object sender, EventArgs e)
         {
-            string filePath = cardInfo[5].Replace("//", "\\");
-            Console.WriteLine(filePath);
+            string filePath = GetLocalPath();
+            //Console.WriteLine(filePath);
             Process.Start("explorer.exe", $"/select,\"{filePath}\"");
+        }
+
+        private string GetLocalPath()
+        {
+            return cardInfo[5].Replace("//", "\\");
         }
     }
 }

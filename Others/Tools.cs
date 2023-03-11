@@ -12,6 +12,7 @@ using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms.VisualStyles;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Backet
 {
@@ -24,7 +25,7 @@ namespace Backet
             return currentDirectory;
         }
         
-        static private bool IsPathExist(string filePath)
+        static public bool IsPathExist(string filePath)
         {
             return File.Exists(filePath);
         }
@@ -67,6 +68,13 @@ namespace Backet
             }
 
             File.WriteAllLines(filePath, data);
+        }
+
+        static public void DeleteRepoFile(string repoName)
+        {
+            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
+            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+            File.Delete(filePath);
         }
 
         static public void SaveDataToRepoFile(string repoName, string data)
@@ -192,9 +200,16 @@ namespace Backet
                     continue;
                 }
 
-                if (currentLine.Contains("private"))
+                if (currentLine.Contains("visibility"))
                 {
-                    private_status = GetBoolFromJson(currentLine);
+                    if (currentLine.Contains("private"))
+                    {
+                        private_status = "true";
+                    }
+                    else
+                    {
+                        private_status = "false";
+                    }
                     continue;
                 }
 
@@ -320,6 +335,7 @@ namespace Backet
 
         private static string GetBoolFromJson(string input)
         {
+            Console.WriteLine(input);
             if (input.Contains("false"))
             {
                 return "false";
@@ -363,6 +379,14 @@ namespace Backet
             string iso8601 = now.ToString("yyyy-MM-ddTHH:mm:ssZ");
             //Console.WriteLine(iso8601);
             return iso8601;
+        }
+
+        public static string ISO8601ToDDMMYY(string inputDateString)
+        {
+            DateTime inputDate = DateTime.Parse(inputDateString);
+            CultureInfo culture = new CultureInfo("en-US");
+            string outputDateString = inputDate.ToString("dd MMM, yyyy", culture);
+            return outputDateString;
         }
     }
 }
