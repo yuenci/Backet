@@ -31,10 +31,20 @@
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MoreOptBtn = new Sunny.UI.UISymbolButton();
-            this.uiLabel1 = new Sunny.UI.UILabel();
-            this.uiLabel2 = new Sunny.UI.UILabel();
+            this.repoName = new Sunny.UI.UILabel();
+            this.descriptionLable = new Sunny.UI.UILabel();
             this.uiLine1 = new Sunny.UI.UILine();
             this.uiLabel3 = new Sunny.UI.UILabel();
+            this.uiLabel4 = new Sunny.UI.UILabel();
+            this.uiLabel5 = new Sunny.UI.UILabel();
+            this.uiLabel6 = new Sunny.UI.UILabel();
+            this.uiLabel7 = new Sunny.UI.UILabel();
+            this.uiLabel8 = new Sunny.UI.UILabel();
+            this.statusLabel = new Sunny.UI.UILabel();
+            this.languageLabel = new Sunny.UI.UILabel();
+            this.starLabel = new Sunny.UI.UILabel();
+            this.issueLabel = new Sunny.UI.UILabel();
+            this.homepageLabel = new Sunny.UI.UILabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,25 +96,24 @@
             this.MoreOptBtn.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MoreOptBtn.Click += new System.EventHandler(this.MoreOptBtn_Click);
             // 
-            // uiLabel1
+            // repoName
             // 
-            this.uiLabel1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.uiLabel1.Location = new System.Drawing.Point(12, 74);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(460, 48);
-            this.uiLabel1.TabIndex = 7;
-            this.uiLabel1.Text = "uiLabel1";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.repoName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.repoName.Location = new System.Drawing.Point(12, 74);
+            this.repoName.Name = "repoName";
+            this.repoName.Size = new System.Drawing.Size(460, 48);
+            this.repoName.TabIndex = 7;
+            this.repoName.Text = "uiLabel1";
+            this.repoName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiLabel2
+            // descriptionLable
             // 
-            this.uiLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel2.Location = new System.Drawing.Point(13, 122);
-            this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(460, 60);
-            this.uiLabel2.TabIndex = 8;
-            this.uiLabel2.Text = "Desciption";
-            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.descriptionLable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLable.Location = new System.Drawing.Point(13, 122);
+            this.descriptionLable.Name = "descriptionLable";
+            this.descriptionLable.Size = new System.Drawing.Size(460, 60);
+            this.descriptionLable.TabIndex = 8;
+            this.descriptionLable.Text = "Description";
             // 
             // uiLine1
             // 
@@ -129,16 +138,141 @@
             this.uiLabel3.Text = "Details";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // uiLabel4
+            // 
+            this.uiLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            this.uiLabel4.Location = new System.Drawing.Point(14, 250);
+            this.uiLabel4.Name = "uiLabel4";
+            this.uiLabel4.Size = new System.Drawing.Size(80, 23);
+            this.uiLabel4.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel4.TabIndex = 11;
+            this.uiLabel4.Text = "Status";
+            this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel5
+            // 
+            this.uiLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            this.uiLabel5.Location = new System.Drawing.Point(14, 295);
+            this.uiLabel5.Name = "uiLabel5";
+            this.uiLabel5.Size = new System.Drawing.Size(80, 23);
+            this.uiLabel5.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel5.TabIndex = 12;
+            this.uiLabel5.Text = "language";
+            this.uiLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel6
+            // 
+            this.uiLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            this.uiLabel6.Location = new System.Drawing.Point(14, 343);
+            this.uiLabel6.Name = "uiLabel6";
+            this.uiLabel6.Size = new System.Drawing.Size(161, 23);
+            this.uiLabel6.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel6.TabIndex = 13;
+            this.uiLabel6.Text = "stargazers_count";
+            this.uiLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel7
+            // 
+            this.uiLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            this.uiLabel7.Location = new System.Drawing.Point(14, 385);
+            this.uiLabel7.Name = "uiLabel7";
+            this.uiLabel7.Size = new System.Drawing.Size(161, 23);
+            this.uiLabel7.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel7.TabIndex = 14;
+            this.uiLabel7.Text = "open_issues_count";
+            this.uiLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel8
+            // 
+            this.uiLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            this.uiLabel8.Location = new System.Drawing.Point(12, 429);
+            this.uiLabel8.Name = "uiLabel8";
+            this.uiLabel8.Size = new System.Drawing.Size(113, 23);
+            this.uiLabel8.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel8.TabIndex = 15;
+            this.uiLabel8.Text = "homepage";
+            this.uiLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.statusLabel.Location = new System.Drawing.Point(261, 250);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(211, 31);
+            this.statusLabel.TabIndex = 16;
+            this.statusLabel.Text = "Desciption";
+            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // languageLabel
+            // 
+            this.languageLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.languageLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.languageLabel.Location = new System.Drawing.Point(261, 296);
+            this.languageLabel.Name = "languageLabel";
+            this.languageLabel.Size = new System.Drawing.Size(211, 31);
+            this.languageLabel.TabIndex = 17;
+            this.languageLabel.Text = "Desciption";
+            this.languageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // starLabel
+            // 
+            this.starLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.starLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.starLabel.Location = new System.Drawing.Point(261, 344);
+            this.starLabel.Name = "starLabel";
+            this.starLabel.Size = new System.Drawing.Size(211, 31);
+            this.starLabel.TabIndex = 18;
+            this.starLabel.Text = "Desciption";
+            this.starLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // issueLabel
+            // 
+            this.issueLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.issueLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.issueLabel.Location = new System.Drawing.Point(261, 386);
+            this.issueLabel.Name = "issueLabel";
+            this.issueLabel.Size = new System.Drawing.Size(211, 31);
+            this.issueLabel.TabIndex = 19;
+            this.issueLabel.Text = "Desciption";
+            this.issueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // homepageLabel
+            // 
+            this.homepageLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homepageLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.homepageLabel.Location = new System.Drawing.Point(170, 430);
+            this.homepageLabel.Name = "homepageLabel";
+            this.homepageLabel.Size = new System.Drawing.Size(303, 31);
+            this.homepageLabel.TabIndex = 20;
+            this.homepageLabel.Text = "Desciption";
+            this.homepageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(484, 561);
+            this.Controls.Add(this.homepageLabel);
+            this.Controls.Add(this.issueLabel);
+            this.Controls.Add(this.starLabel);
+            this.Controls.Add(this.languageLabel);
+            this.Controls.Add(this.statusLabel);
+            this.Controls.Add(this.uiLabel8);
+            this.Controls.Add(this.uiLabel7);
+            this.Controls.Add(this.uiLabel6);
+            this.Controls.Add(this.uiLabel5);
+            this.Controls.Add(this.uiLabel4);
             this.Controls.Add(this.uiLabel3);
             this.Controls.Add(this.uiLine1);
-            this.Controls.Add(this.uiLabel2);
-            this.Controls.Add(this.uiLabel1);
+            this.Controls.Add(this.descriptionLable);
+            this.Controls.Add(this.repoName);
             this.Controls.Add(this.MoreOptBtn);
             this.Controls.Add(this.uiSymbolButton1);
             this.Controls.Add(this.pictureBox1);
@@ -155,9 +289,19 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Sunny.UI.UISymbolButton uiSymbolButton1;
         private Sunny.UI.UISymbolButton MoreOptBtn;
-        private Sunny.UI.UILabel uiLabel1;
-        private Sunny.UI.UILabel uiLabel2;
+        private Sunny.UI.UILabel repoName;
+        private Sunny.UI.UILabel descriptionLable;
         private Sunny.UI.UILine uiLine1;
         private Sunny.UI.UILabel uiLabel3;
+        private Sunny.UI.UILabel uiLabel4;
+        private Sunny.UI.UILabel uiLabel5;
+        private Sunny.UI.UILabel uiLabel6;
+        private Sunny.UI.UILabel uiLabel7;
+        private Sunny.UI.UILabel uiLabel8;
+        private Sunny.UI.UILabel statusLabel;
+        private Sunny.UI.UILabel languageLabel;
+        private Sunny.UI.UILabel starLabel;
+        private Sunny.UI.UILabel issueLabel;
+        private Sunny.UI.UILabel homepageLabel;
     }
 }

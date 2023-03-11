@@ -177,6 +177,60 @@ namespace Backet
             return res;
         }
 
+        public static string[] GetRepoDetailsInfo(string repoName)
+        {
+            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
+            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+
+            string[] lines = File.ReadAllLines(filePath);
+
+            string description = "";
+            string homepage = "";
+            string stargazers_count = "";
+            string language = "";
+            string open_issues_count = "";
+            
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string currentLine = lines[i];
+
+                if (currentLine.Contains("description"))
+                {
+                    if (currentLine.Contains("null")) continue;
+                    description = GetUrlFromJson(currentLine);
+                    continue;
+                }
+
+                if (currentLine.Contains("homepage"))
+                {
+                    if (currentLine.Contains("null")) continue;
+                    homepage = GetUrlFromJson(currentLine);
+                    continue;
+                }
+
+                if (currentLine.Contains("stargazers_count"))
+                {
+                    stargazers_count = GetNumberFromJson(currentLine);
+                    continue;
+                }
+
+                if (currentLine.Contains("language"))
+                {
+                    language = GetUrlFromJson(currentLine);
+                    continue;
+                }
+
+                if (currentLine.Contains("open_issues_count"))
+                {
+                    open_issues_count = GetNumberFromJson(currentLine);
+                    break;
+                }
+            }
+
+            string[] res = { description, homepage, stargazers_count, language, open_issues_count};
+            return res;
+        }
+
         private static string GetTimeStampFromJson(string input)
         {
             string pattern = @"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z)";
@@ -198,6 +252,14 @@ namespace Backet
             string path = input.Substring(startIndex, endIndex - startIndex);
             return path;
         }
+        private static string GetNumberFromJson(string input)
+        {
+            int startIndex = input.IndexOf("\": ") + 3;
+            int endIndex = input.LastIndexOf(',');
+            string path = input.Substring(startIndex, endIndex - startIndex);
+            return path;
+        }
+
 
         public static string[] GetAllRepoNamFromLocal()
         {

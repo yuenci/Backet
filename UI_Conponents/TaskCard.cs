@@ -14,8 +14,8 @@ namespace Backet.UI_Conponents
 {
     public partial class TaskCard : UserControl
     {
-        string[] cardInfo;
-        string repoName;
+        public string[] cardInfo;
+        public string repoName;
         public TaskCard()
         {
             InitializeComponent();
@@ -103,6 +103,7 @@ namespace Backet.UI_Conponents
         private void TaskName_Click(object sender, EventArgs e)
         {
             Details details = new Details();
+            details.InitTaskCard(this);
             details.ShowDialog();
         }
 
