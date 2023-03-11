@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Backet
         {
             InitializeComponent();
             AddCard();
+            Tools.DetectDataFile();
         }
 
         private void SearchTextBox_Enter(object sender, EventArgs e)
@@ -53,6 +55,17 @@ namespace Backet
         {
             Submit submitForm = new Submit();
             submitForm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            Console.WriteLine(currentDirectory);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Tools.TestGetRepoInfo();
         }
     }
 }

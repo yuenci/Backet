@@ -89,6 +89,8 @@
     <Compile Include="Forms\SunnyUIComponents.Designer.cs">
       <DependentUpon>SunnyUIComponents.cs</DependentUpon>
     </Compile>
+    <Compile Include="Token.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="UI_Conponents\TaskCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
