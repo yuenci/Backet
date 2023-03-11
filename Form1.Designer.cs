@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.uiPanel2 = new Sunny.UI.UIPanel();
-            this.uiPanel3 = new Sunny.UI.UIPanel();
-            this.uiPanel4 = new Sunny.UI.UIPanel();
-            this.uiPanel5 = new Sunny.UI.UIPanel();
-            this.uiPanel6 = new Sunny.UI.UIPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.uiPanel7 = new Sunny.UI.UIPanel();
             this.AddBtn = new Sunny.UI.UIAvatar();
             this.uiPanel8 = new Sunny.UI.UIPanel();
@@ -45,111 +40,10 @@
             this.TaskNum = new Sunny.UI.UIAvatar();
             this.TypeComboBox = new Sunny.UI.UIComboBox();
             this.uiAvatar1 = new Sunny.UI.UIAvatar();
+            this.CardContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.uiPanel7.SuspendLayout();
             this.uiPanel8.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // uiPanel1
-            // 
-            this.uiPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.uiPanel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel1.Location = new System.Drawing.Point(74, 155);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Radius = 10;
-            this.uiPanel1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
-            this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(280, 230);
-            this.uiPanel1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiPanel1.TabIndex = 1;
-            this.uiPanel1.Text = "Panel";
-            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiPanel2
-            // 
-            this.uiPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.uiPanel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel2.Location = new System.Drawing.Point(379, 155);
-            this.uiPanel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel2.Name = "uiPanel2";
-            this.uiPanel2.Radius = 10;
-            this.uiPanel2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
-            this.uiPanel2.RectSize = 2;
-            this.uiPanel2.Size = new System.Drawing.Size(280, 230);
-            this.uiPanel2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiPanel2.TabIndex = 2;
-            this.uiPanel2.Text = "Panel";
-            this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiPanel3
-            // 
-            this.uiPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.uiPanel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel3.Location = new System.Drawing.Point(684, 155);
-            this.uiPanel3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel3.Name = "uiPanel3";
-            this.uiPanel3.Radius = 10;
-            this.uiPanel3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
-            this.uiPanel3.RectSize = 2;
-            this.uiPanel3.Size = new System.Drawing.Size(280, 230);
-            this.uiPanel3.Style = Sunny.UI.UIStyle.Custom;
-            this.uiPanel3.TabIndex = 2;
-            this.uiPanel3.Text = "Panel";
-            this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiPanel4
-            // 
-            this.uiPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.uiPanel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel4.Location = new System.Drawing.Point(684, 416);
-            this.uiPanel4.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel4.Name = "uiPanel4";
-            this.uiPanel4.Radius = 10;
-            this.uiPanel4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
-            this.uiPanel4.RectSize = 2;
-            this.uiPanel4.Size = new System.Drawing.Size(280, 230);
-            this.uiPanel4.Style = Sunny.UI.UIStyle.Custom;
-            this.uiPanel4.TabIndex = 5;
-            this.uiPanel4.Text = "Panel";
-            this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiPanel5
-            // 
-            this.uiPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.uiPanel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel5.Location = new System.Drawing.Point(379, 416);
-            this.uiPanel5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel5.Name = "uiPanel5";
-            this.uiPanel5.Radius = 10;
-            this.uiPanel5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
-            this.uiPanel5.RectSize = 2;
-            this.uiPanel5.Size = new System.Drawing.Size(280, 230);
-            this.uiPanel5.Style = Sunny.UI.UIStyle.Custom;
-            this.uiPanel5.TabIndex = 4;
-            this.uiPanel5.Text = "Panel";
-            this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiPanel6
-            // 
-            this.uiPanel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.uiPanel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel6.Location = new System.Drawing.Point(77, 416);
-            this.uiPanel6.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel6.Name = "uiPanel6";
-            this.uiPanel6.Radius = 10;
-            this.uiPanel6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
-            this.uiPanel6.RectSize = 2;
-            this.uiPanel6.Size = new System.Drawing.Size(280, 230);
-            this.uiPanel6.Style = Sunny.UI.UIStyle.Custom;
-            this.uiPanel6.TabIndex = 3;
-            this.uiPanel6.Text = "Panel";
-            this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiPanel7
             // 
@@ -349,12 +243,21 @@
             this.uiAvatar1.TabIndex = 10;
             this.uiAvatar1.Text = "6";
             // 
+            // CardContainer
+            // 
+            this.CardContainer.AutoScroll = true;
+            this.CardContainer.Location = new System.Drawing.Point(74, 134);
+            this.CardContainer.Name = "CardContainer";
+            this.CardContainer.Size = new System.Drawing.Size(929, 515);
+            this.CardContainer.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1034, 661);
+            this.Controls.Add(this.CardContainer);
             this.Controls.Add(this.uiAvatar1);
             this.Controls.Add(this.TypeComboBox);
             this.Controls.Add(this.TaskNum);
@@ -362,14 +265,9 @@
             this.Controls.Add(this.uiPanel8);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.uiPanel7);
-            this.Controls.Add(this.uiPanel4);
-            this.Controls.Add(this.uiPanel5);
-            this.Controls.Add(this.uiPanel3);
-            this.Controls.Add(this.uiPanel6);
-            this.Controls.Add(this.uiPanel2);
-            this.Controls.Add(this.uiPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Backet";
             this.uiPanel7.ResumeLayout(false);
             this.uiPanel8.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -377,13 +275,6 @@
         }
 
         #endregion
-
-        private Sunny.UI.UIPanel uiPanel1;
-        private Sunny.UI.UIPanel uiPanel2;
-        private Sunny.UI.UIPanel uiPanel3;
-        private Sunny.UI.UIPanel uiPanel4;
-        private Sunny.UI.UIPanel uiPanel5;
-        private Sunny.UI.UIPanel uiPanel6;
         private Sunny.UI.UIPanel uiPanel7;
         private Sunny.UI.UIAvatar AddBtn;
         private Sunny.UI.UIPanel uiPanel8;
@@ -395,6 +286,7 @@
         private Sunny.UI.UIAvatar TaskNum;
         private Sunny.UI.UIComboBox TypeComboBox;
         private Sunny.UI.UIAvatar uiAvatar1;
+        private System.Windows.Forms.FlowLayoutPanel CardContainer;
     }
 }
 

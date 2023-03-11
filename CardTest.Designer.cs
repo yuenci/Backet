@@ -45,6 +45,7 @@
             this.taskCard1.Name = "taskCard1";
             this.taskCard1.Size = new System.Drawing.Size(290, 240);
             this.taskCard1.TabIndex = 0;
+            this.taskCard1.Load += new System.EventHandler(this.taskCard1_Load);
             // 
             // uiPanel1
             // 

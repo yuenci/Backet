@@ -16,5 +16,10 @@ namespace Backet
         {
             InitializeComponent();
         }
+
+        private void taskCard1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

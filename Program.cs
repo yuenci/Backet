@@ -16,7 +16,7 @@ namespace Backet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CardTest());
+            Application.Run(new Form1());
         }
     }
 }

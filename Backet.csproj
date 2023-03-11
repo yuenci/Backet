@@ -128,5 +128,8 @@
   <ItemGroup>
     <None Include="Resources\githubIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
