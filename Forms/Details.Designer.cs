@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.complereBtn = new Sunny.UI.UISymbolButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MoreOptBtn = new Sunny.UI.UISymbolButton();
             this.repoName = new Sunny.UI.UILabel();
@@ -49,24 +49,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // uiSymbolButton1
+            // complereBtn
             // 
-            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.uiSymbolButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
-            this.uiSymbolButton1.Location = new System.Drawing.Point(249, 12);
-            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton1.Name = "uiSymbolButton1";
-            this.uiSymbolButton1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
-            this.uiSymbolButton1.RectSize = 2;
-            this.uiSymbolButton1.Size = new System.Drawing.Size(164, 40);
-            this.uiSymbolButton1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiSymbolButton1.Symbol = 78;
-            this.uiSymbolButton1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
-            this.uiSymbolButton1.TabIndex = 5;
-            this.uiSymbolButton1.Text = "Completed";
-            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.complereBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.complereBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.complereBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.complereBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.complereBtn.Location = new System.Drawing.Point(249, 12);
+            this.complereBtn.MinimumSize = new System.Drawing.Size(1, 1);
+            this.complereBtn.Name = "complereBtn";
+            this.complereBtn.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
+            this.complereBtn.RectSize = 2;
+            this.complereBtn.Size = new System.Drawing.Size(164, 40);
+            this.complereBtn.Style = Sunny.UI.UIStyle.Custom;
+            this.complereBtn.Symbol = 78;
+            this.complereBtn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.complereBtn.TabIndex = 5;
+            this.complereBtn.Text = "Completed";
+            this.complereBtn.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.complereBtn.Click += new System.EventHandler(this.complereBtn_Click);
             // 
             // pictureBox1
             // 
@@ -158,10 +159,10 @@
             this.uiLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
             this.uiLabel5.Location = new System.Drawing.Point(14, 295);
             this.uiLabel5.Name = "uiLabel5";
-            this.uiLabel5.Size = new System.Drawing.Size(80, 23);
+            this.uiLabel5.Size = new System.Drawing.Size(103, 23);
             this.uiLabel5.Style = Sunny.UI.UIStyle.Custom;
             this.uiLabel5.TabIndex = 12;
-            this.uiLabel5.Text = "language";
+            this.uiLabel5.Text = "Language";
             this.uiLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel6
@@ -173,7 +174,7 @@
             this.uiLabel6.Size = new System.Drawing.Size(161, 23);
             this.uiLabel6.Style = Sunny.UI.UIStyle.Custom;
             this.uiLabel6.TabIndex = 13;
-            this.uiLabel6.Text = "stargazers_count";
+            this.uiLabel6.Text = "Star Number";
             this.uiLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // issueTextLabel
@@ -186,7 +187,7 @@
             this.issueTextLabel.Size = new System.Drawing.Size(161, 23);
             this.issueTextLabel.Style = Sunny.UI.UIStyle.Custom;
             this.issueTextLabel.TabIndex = 14;
-            this.issueTextLabel.Text = "open_issues_count";
+            this.issueTextLabel.Text = "Issues Number";
             this.issueTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // homepageTextLabel
@@ -194,12 +195,12 @@
             this.homepageTextLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homepageTextLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homepageTextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
-            this.homepageTextLabel.Location = new System.Drawing.Point(12, 429);
+            this.homepageTextLabel.Location = new System.Drawing.Point(14, 429);
             this.homepageTextLabel.Name = "homepageTextLabel";
             this.homepageTextLabel.Size = new System.Drawing.Size(113, 23);
             this.homepageTextLabel.Style = Sunny.UI.UIStyle.Custom;
             this.homepageTextLabel.TabIndex = 15;
-            this.homepageTextLabel.Text = "homepage";
+            this.homepageTextLabel.Text = "Homepage";
             this.homepageTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // statusLabel
@@ -300,7 +301,7 @@
             this.Controls.Add(this.descriptionLable);
             this.Controls.Add(this.repoName);
             this.Controls.Add(this.MoreOptBtn);
-            this.Controls.Add(this.uiSymbolButton1);
+            this.Controls.Add(this.complereBtn);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -313,7 +314,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Sunny.UI.UISymbolButton uiSymbolButton1;
+        private Sunny.UI.UISymbolButton complereBtn;
         private Sunny.UI.UISymbolButton MoreOptBtn;
         private Sunny.UI.UILabel repoName;
         private Sunny.UI.UILabel descriptionLable;

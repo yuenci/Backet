@@ -23,6 +23,64 @@ namespace Backet
             //Console.WriteLine(currentDirectory);
             return currentDirectory;
         }
+        
+        static private bool IsPathExist(string filePath)
+        {
+            return File.Exists(filePath);
+        }
+
+        static private bool isFolderExist(string folderPath)
+        {
+            return Directory.Exists(folderPath);
+        }
+
+        static public dynamic GetDataFromRepoName(string repoName, string mode = "array")
+        {
+            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
+            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+
+            if (!IsPathExist(filePath))
+            {
+                MessageBox.Show($"\"{filePath}\" doesn't exist");
+            }
+            if (mode == "string")
+            {
+                return File.ReadAllText(filePath);
+            }
+            else
+            {
+                return File.ReadAllLines(filePath);
+            }
+            
+        }
+
+
+
+        static public void SaveDataToRepoFile(string repoName, string[] data)
+        {
+            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
+            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+
+            if (!File.Exists(filePath))
+            {
+                File.Create(filePath);
+            }
+
+            File.WriteAllLines(filePath, data);
+        }
+
+        static public void SaveDataToRepoFile(string repoName, string data)
+        {
+            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
+            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+
+            if (!File.Exists(filePath))
+            {
+                File.Create(filePath);
+            }
+
+            File.WriteAllText(filePath, data);
+        }
 
         static public void  DetectDataFile()
         {
@@ -277,6 +335,14 @@ namespace Backet
             }
 
             return fileNames;
+        }
+
+        public static string GetNowISO8601()
+        {
+            DateTime now = DateTime.UtcNow;
+            string iso8601 = now.ToString("yyyy-MM-ddTHH:mm:ssZ");
+            //Console.WriteLine(iso8601);
+            return iso8601;
         }
     }
 }

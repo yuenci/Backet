@@ -98,5 +98,19 @@ namespace Backet.Forms
         {
             return "https://github.com/" +  this.taskCard.cardInfo[0];
         }
+
+        private void complereBtn_Click(object sender, EventArgs e)
+        {
+            string repoName = this.taskCard.repoName;
+            string[] data = Tools.GetDataFromRepoName(repoName);
+            for (int i = 0; i < data.Length; i++)
+            {
+                if (data[i].Contains("complete"))
+                {
+                    data[i].Replace("false", "true");
+                }
+            }
+            Tools.SaveDataToRepoFile(repoName,data);
+        }
     }
 }

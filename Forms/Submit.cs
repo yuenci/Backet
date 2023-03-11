@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ namespace Backet
 {
     public partial class Submit : Form
     {
+        private string RopeURLCache = "";
+        private string FigmaURLCache = ""; 
+        private string LocalPathCache = "";
         public Submit()
         {
             InitializeComponent();
@@ -19,10 +23,15 @@ namespace Backet
 
         public void InitForm(string repoURL, string figmarURL, string localPath)
         {
-            RepoURL.Text = repoURL;
-            RepoURL.Enabled = false;
-            FigmaURL.Text = figmarURL;
-            LocalPath.Text = localPath;
+            this.RepoURL.Text = repoURL;
+            RopeURLCache = repoURL;
+            this.RepoURL.Enabled = false;
+
+            this.FigmaURL.Text = figmarURL;
+            this.FigmaURLCache = figmarURL;
+
+            this.LocalPath.Text = localPath;
+            this.LocalPathCache = localPath;
         }
 
         private async void SubmitBtn_Click(object sender, EventArgs e)
@@ -30,6 +39,18 @@ namespace Backet
             string repoURL = RepoURL.Text;
             string figma = FigmaURL.Text;
             string file = LocalPath.Text;
+
+            // if under modifier happen
+            if (this.FigmaURLCache != "" || this.LocalPathCache != "")
+            {
+                // if any modify
+                if (this.FigmaURL.Text != this.FigmaURLCache || this.LocalPath.Text != this.LocalPathCache)
+                {
+                    UpdateInfo();
+                    return;
+                }
+                this.Close();
+            }
 
 
             if (repoURL == "" || !Tools.IsValidUrl(repoURL))
@@ -53,6 +74,27 @@ namespace Backet
             repoInfo += "}";
             //Console.WriteLine(repoInfo);
             return repoInfo;
+        }
+
+        private void  UpdateInfo()
+        {
+            string ropeName = Tools.getRepoNameFromURL(this.RopeURLCache);
+            string data = Tools.GetDataFromRepoName(ropeName,"string");
+            //Console.WriteLine(data);
+
+
+            if (this.FigmaURL.Text != this.FigmaURLCache)
+            {
+                data = data.Replace(this.FigmaURLCache, this.FigmaURL.Text);
+            }
+
+            if (this.LocalPath.Text != this.LocalPathCache)
+            {
+                data = data.Replace(this.LocalPathCache, this.LocalPath.Text);
+            }
+
+            Tools.SaveDataToRepoFile(ropeName,data);
+            this.Close();
         }
     }
 }

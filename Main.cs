@@ -68,6 +68,8 @@ namespace Backet
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string[] data = Tools.GetDataFromRepoName("Java-Car-Rental-System");
+            Console.WriteLine(data[10]);
         }
 
         private void button2_Click(object sender, EventArgs e)
