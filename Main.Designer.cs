@@ -137,6 +137,7 @@
             this.SearchTextBox.Text = "Search";
             this.SearchTextBox.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.SearchTextBox.Watermark = "";
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             this.SearchTextBox.Leave += new System.EventHandler(this.SearchTextBox_Leave);
             this.SearchTextBox.Enter += new System.EventHandler(this.SearchTextBox_Enter);
             // 
@@ -226,6 +227,7 @@
             this.TypeComboBox.Text = "Status";
             this.TypeComboBox.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.TypeComboBox.Watermark = "";
+            this.TypeComboBox.SelectedIndexChanged += new System.EventHandler(this.TypeComboBox_SelectedIndexChanged);
             // 
             // SelectedTaskNum
             // 
