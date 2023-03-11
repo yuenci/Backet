@@ -46,6 +46,8 @@
             this.DeleteButton = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
             this.starLabel = new Sunny.UI.UISymbolButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // complereBtn
@@ -103,7 +105,7 @@
             this.descriptionLable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionLable.Location = new System.Drawing.Point(13, 122);
             this.descriptionLable.Name = "descriptionLable";
-            this.descriptionLable.Size = new System.Drawing.Size(460, 60);
+            this.descriptionLable.Size = new System.Drawing.Size(338, 60);
             this.descriptionLable.TabIndex = 8;
             this.descriptionLable.Text = "Description";
             this.descriptionLable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,12 +298,22 @@
             this.starLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.starLabel.TipsFont = new System.Drawing.Font("Segoe UI", 12F);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(372, 74);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(484, 561);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.starLabel);
             this.Controls.Add(this.uiSymbolButton1);
             this.Controls.Add(this.DeleteButton);
@@ -323,6 +335,7 @@
             this.Name = "Details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Details";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,5 +359,6 @@
         private Sunny.UI.UISymbolButton DeleteButton;
         private Sunny.UI.UISymbolButton uiSymbolButton1;
         private Sunny.UI.UISymbolButton starLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

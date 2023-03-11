@@ -13,6 +13,11 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms.VisualStyles;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Drawing.Imaging;
+using System.Net;
+using System.Drawing;
+using Svg;
+using Svg.Transforms;
 
 namespace Backet
 {
@@ -387,6 +392,55 @@ namespace Backet
             CultureInfo culture = new CultureInfo("en-US");
             string outputDateString = inputDate.ToString("dd MMM, yyyy", culture);
             return outputDateString;
+        }
+
+        public static void LoadSvgImage(PictureBox pictureBox, string url)
+        {
+            using (var client = new WebClient())
+            using (var stream = client.OpenRead(url))
+            {
+                var svgDocument = SvgDocument.Open<SvgDocument>(stream);
+                var bitmap = svgDocument.Draw();
+
+                if (pictureBox.InvokeRequired)
+                {
+                    pictureBox.Invoke((MethodInvoker)delegate
+                    {
+                        pictureBox.Image = ConvertBitmapToImage(bitmap);
+                    });
+                }
+                else
+                {
+                    pictureBox.Image = ConvertBitmapToImage(bitmap);
+                }
+            }
+        }
+
+        public static Bitmap ConvertBitmapToImage(Bitmap bitmap)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                bitmap.Save(memoryStream, ImageFormat.Png);
+                memoryStream.Position = 0;
+                var bitmapImage = new Bitmap(memoryStream);
+                return bitmapImage;
+            }
+        }
+
+        public static string FixLangName(string lang)
+        {
+            // https://devicon.dev/
+
+            Console.WriteLine(lang);
+            switch (lang)
+            {
+                case "C#":
+                    return "csharp";
+                case "vue":
+                    return "vuejs";
+                default:
+                    return "csharp";
+            }
         }
     }
 }
