@@ -181,6 +181,7 @@ namespace Backet
             string updated_at = "";
             string figma_url = "";
             string local_path = "";
+            string complete = "";
             for (int i =0; i< lines.Length; i++)
             {
                 string currentLine = lines[i];
@@ -193,14 +194,7 @@ namespace Backet
 
                 if (currentLine.Contains("private"))
                 {
-                    if (currentLine.Contains("false"))
-                    {
-                        private_status = "false";
-                    }
-                    else if(currentLine.Contains("true"))
-                    {
-                        private_status = "true";
-                    }
+                    private_status = GetBoolFromJson(currentLine);
                     continue;
                 }
 
@@ -229,9 +223,14 @@ namespace Backet
                     //Console.WriteLine(local_path);
                     break;
                 }
+
+                if (currentLine.Contains("complete"))
+                {
+                    complete = GetBoolFromJson(currentLine);
+                }
             }
 
-            string[] res = { full_name,private_status, created_at, updated_at, figma_url, local_path };
+            string[] res = { full_name,private_status, created_at, updated_at, figma_url, local_path, complete };
             return res;
         }
 
@@ -316,6 +315,22 @@ namespace Backet
             int endIndex = input.LastIndexOf(',');
             string path = input.Substring(startIndex, endIndex - startIndex);
             return path;
+        }
+
+        private static string GetBoolFromJson(string input)
+        {
+            if (input.Contains("false"))
+            {
+                return "false";
+            }
+            else if (input.Contains("true"))
+            {
+                return "true";
+            }
+            else
+            {
+                throw new Exception("GetBoolFromJson Wrong");
+            }
         }
 
 

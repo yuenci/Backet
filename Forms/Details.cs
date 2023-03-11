@@ -1,11 +1,13 @@
 ﻿using Backet.UI_Conponents;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,12 +45,14 @@ namespace Backet.Forms
 
         private void InitLable() {
             repoName.Text = this.taskCard.repoName;
-            if(this.taskCard.cardInfo[1] == "false")
+            if(this.taskCard.cardInfo[6] == "false")
             {
                 statusLabel.Text = "Active";
+
             }
             else
             {
+                complereBtn.Enabled = false;
                 statusLabel.Text = "Complete";
             }
             
@@ -103,14 +107,18 @@ namespace Backet.Forms
         {
             string repoName = this.taskCard.repoName;
             string[] data = Tools.GetDataFromRepoName(repoName);
+            List<string> list = new List<string>(data);
+            string dataTime = Tools.GetNowISO8601();
             for (int i = 0; i < data.Length; i++)
             {
                 if (data[i].Contains("complete"))
                 {
-                    data[i].Replace("false", "true");
+                    list[i] = data[i].Replace("false", "true,");
+                    list.Insert(i + 1, $"  \"completeDate\": \"{dataTime}\"");
                 }
             }
-            Tools.SaveDataToRepoFile(repoName,data);
+            string[] newData = list.ToArray();
+            Tools.SaveDataToRepoFile(repoName, newData);
         }
     }
 }
