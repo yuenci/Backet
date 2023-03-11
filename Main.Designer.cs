@@ -41,7 +41,6 @@
             this.TypeComboBox = new Sunny.UI.UIComboBox();
             this.SelectedTaskNum = new Sunny.UI.UIAvatar();
             this.CardContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.uiPanel7.SuspendLayout();
             this.uiPanel8.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +69,7 @@
             this.Settings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Settings.FillColor = System.Drawing.Color.Transparent;
             this.Settings.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Settings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Settings.Location = new System.Drawing.Point(3, 5);
             this.Settings.MinimumSize = new System.Drawing.Size(1, 1);
             this.Settings.Name = "Settings";
@@ -146,7 +145,7 @@
             this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SearchBtn.FillColor = System.Drawing.Color.Transparent;
             this.SearchBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SearchBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SearchBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.SearchBtn.Location = new System.Drawing.Point(840, 3);
             this.SearchBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.SearchBtn.Name = "SearchBtn";
@@ -164,7 +163,7 @@
             this.MenuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuBtn.FillColor = System.Drawing.Color.Transparent;
             this.MenuBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MenuBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MenuBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MenuBtn.Location = new System.Drawing.Point(3, 7);
             this.MenuBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.MenuBtn.Name = "MenuBtn";
@@ -252,23 +251,12 @@
             this.CardContainer.Size = new System.Drawing.Size(929, 515);
             this.CardContainer.TabIndex = 11;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(481, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1034, 661);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.CardContainer);
             this.Controls.Add(this.SelectedTaskNum);
             this.Controls.Add(this.TypeComboBox);
@@ -301,7 +289,6 @@
         private Sunny.UI.UIComboBox TypeComboBox;
         private Sunny.UI.UIAvatar SelectedTaskNum;
         public System.Windows.Forms.FlowLayoutPanel CardContainer;
-        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -1,6 +1,6 @@
 - [x] Add search function
 - [x] Add combo Box select
-- [ ] Update data after modify rope data
+- [x] Update data after modify rope data
 - [x] Update panel  after add new repo card
 - [ ] Language display with photo
 - [x] Add star to star part
