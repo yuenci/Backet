@@ -50,6 +50,10 @@ namespace Backet.Forms
                 statusLabel.Text = "Active";
 
             }
+            else if(this.taskCard.cardInfo[6] == "null")
+            {
+                statusLabel.Text = "Todo";
+            }
             else
             {
                 complereBtn.Enabled = false;
@@ -114,6 +118,7 @@ namespace Backet.Forms
                 if (data[i].Contains("complete"))
                 {
                     list[i] = data[i].Replace("false", "true,");
+                    list[i] = data[i].Replace("null", "true,");
                     list.Insert(i + 1, $"  \"completeDate\": \"{dataTime}\"");
                 }
             }

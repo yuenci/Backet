@@ -37,6 +37,8 @@
             this.FigmaURL = new Sunny.UI.UITextBox();
             this.LocalPath = new Sunny.UI.UITextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.uiLabel4 = new Sunny.UI.UILabel();
+            this.TaskStatusComboBox = new Sunny.UI.UIComboBox();
             this.SuspendLayout();
             // 
             // uiLabel1
@@ -73,7 +75,7 @@
             // 
             this.SubmitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SubmitBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubmitBtn.Location = new System.Drawing.Point(19, 276);
+            this.SubmitBtn.Location = new System.Drawing.Point(19, 345);
             this.SubmitBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.SubmitBtn.Name = "SubmitBtn";
             this.SubmitBtn.Size = new System.Drawing.Size(453, 35);
@@ -134,11 +136,42 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "*";
             // 
+            // uiLabel4
+            // 
+            this.uiLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel4.Location = new System.Drawing.Point(15, 256);
+            this.uiLabel4.Name = "uiLabel4";
+            this.uiLabel4.Size = new System.Drawing.Size(100, 23);
+            this.uiLabel4.TabIndex = 7;
+            this.uiLabel4.Text = "Task Status";
+            this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TaskStatusComboBox
+            // 
+            this.TaskStatusComboBox.DataSource = null;
+            this.TaskStatusComboBox.FillColor = System.Drawing.Color.White;
+            this.TaskStatusComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskStatusComboBox.Items.AddRange(new object[] {
+            "Todo",
+            "In Progress",
+            "Done"});
+            this.TaskStatusComboBox.Location = new System.Drawing.Point(19, 283);
+            this.TaskStatusComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TaskStatusComboBox.MinimumSize = new System.Drawing.Size(63, 0);
+            this.TaskStatusComboBox.Name = "TaskStatusComboBox";
+            this.TaskStatusComboBox.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.TaskStatusComboBox.Size = new System.Drawing.Size(452, 29);
+            this.TaskStatusComboBox.TabIndex = 8;
+            this.TaskStatusComboBox.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TaskStatusComboBox.Watermark = "";
+            // 
             // Submit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 367);
+            this.ClientSize = new System.Drawing.Size(484, 392);
+            this.Controls.Add(this.TaskStatusComboBox);
+            this.Controls.Add(this.uiLabel4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LocalPath);
             this.Controls.Add(this.FigmaURL);
@@ -167,5 +200,7 @@
         private Sunny.UI.UITextBox FigmaURL;
         private Sunny.UI.UITextBox LocalPath;
         private System.Windows.Forms.Label label1;
+        private Sunny.UI.UILabel uiLabel4;
+        private Sunny.UI.UIComboBox TaskStatusComboBox;
     }
 }

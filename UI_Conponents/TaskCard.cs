@@ -28,6 +28,7 @@ namespace Backet.UI_Conponents
             InitBackground();
             InitLabels();
             InitIcons();
+            Console.WriteLine(cardInfo[6]);
         }
         private void InitBackground()
         {

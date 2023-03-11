@@ -14,6 +14,7 @@ namespace Backet
 {
     public partial class Main : Form
     {
+        private 
         public Main()
         {
             InitializeComponent();

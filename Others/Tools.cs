@@ -221,12 +221,13 @@ namespace Backet
                 {
                     local_path = GetUrlFromJson(currentLine);
                     //Console.WriteLine(local_path);
-                    break;
+                    continue;
                 }
 
                 if (currentLine.Contains("complete"))
                 {
                     complete = GetBoolFromJson(currentLine);
+                    break;
                 }
             }
 
@@ -326,6 +327,10 @@ namespace Backet
             else if (input.Contains("true"))
             {
                 return "true";
+            }
+            else if (input.Contains("null"))
+            {
+                return "null";
             }
             else
             {
