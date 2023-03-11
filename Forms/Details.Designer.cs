@@ -38,8 +38,8 @@
             this.uiLabel4 = new Sunny.UI.UILabel();
             this.uiLabel5 = new Sunny.UI.UILabel();
             this.uiLabel6 = new Sunny.UI.UILabel();
-            this.uiLabel7 = new Sunny.UI.UILabel();
-            this.uiLabel8 = new Sunny.UI.UILabel();
+            this.issueTextLabel = new Sunny.UI.UILabel();
+            this.homepageTextLabel = new Sunny.UI.UILabel();
             this.statusLabel = new Sunny.UI.UILabel();
             this.languageLabel = new Sunny.UI.UILabel();
             this.starLabel = new Sunny.UI.UILabel();
@@ -98,6 +98,7 @@
             // 
             // repoName
             // 
+            this.repoName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.repoName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.repoName.Location = new System.Drawing.Point(12, 74);
             this.repoName.Name = "repoName";
@@ -174,29 +175,31 @@
             this.uiLabel6.Text = "stargazers_count";
             this.uiLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiLabel7
+            // issueTextLabel
             // 
-            this.uiLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
-            this.uiLabel7.Location = new System.Drawing.Point(14, 385);
-            this.uiLabel7.Name = "uiLabel7";
-            this.uiLabel7.Size = new System.Drawing.Size(161, 23);
-            this.uiLabel7.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLabel7.TabIndex = 14;
-            this.uiLabel7.Text = "open_issues_count";
-            this.uiLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.issueTextLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.issueTextLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.issueTextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            this.issueTextLabel.Location = new System.Drawing.Point(14, 385);
+            this.issueTextLabel.Name = "issueTextLabel";
+            this.issueTextLabel.Size = new System.Drawing.Size(161, 23);
+            this.issueTextLabel.Style = Sunny.UI.UIStyle.Custom;
+            this.issueTextLabel.TabIndex = 14;
+            this.issueTextLabel.Text = "open_issues_count";
+            this.issueTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiLabel8
+            // homepageTextLabel
             // 
-            this.uiLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
-            this.uiLabel8.Location = new System.Drawing.Point(12, 429);
-            this.uiLabel8.Name = "uiLabel8";
-            this.uiLabel8.Size = new System.Drawing.Size(113, 23);
-            this.uiLabel8.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLabel8.TabIndex = 15;
-            this.uiLabel8.Text = "homepage";
-            this.uiLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homepageTextLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homepageTextLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homepageTextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(134)))), ((int)(((byte)(134)))));
+            this.homepageTextLabel.Location = new System.Drawing.Point(12, 429);
+            this.homepageTextLabel.Name = "homepageTextLabel";
+            this.homepageTextLabel.Size = new System.Drawing.Size(113, 23);
+            this.homepageTextLabel.Style = Sunny.UI.UIStyle.Custom;
+            this.homepageTextLabel.TabIndex = 15;
+            this.homepageTextLabel.Text = "homepage";
+            this.homepageTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // statusLabel
             // 
@@ -233,6 +236,7 @@
             // 
             // issueLabel
             // 
+            this.issueLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.issueLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.issueLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.issueLabel.Location = new System.Drawing.Point(261, 386);
@@ -244,6 +248,7 @@
             // 
             // homepageLabel
             // 
+            this.homepageLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homepageLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homepageLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.homepageLabel.Location = new System.Drawing.Point(170, 430);
@@ -264,8 +269,8 @@
             this.Controls.Add(this.starLabel);
             this.Controls.Add(this.languageLabel);
             this.Controls.Add(this.statusLabel);
-            this.Controls.Add(this.uiLabel8);
-            this.Controls.Add(this.uiLabel7);
+            this.Controls.Add(this.homepageTextLabel);
+            this.Controls.Add(this.issueTextLabel);
             this.Controls.Add(this.uiLabel6);
             this.Controls.Add(this.uiLabel5);
             this.Controls.Add(this.uiLabel4);
@@ -296,8 +301,8 @@
         private Sunny.UI.UILabel uiLabel4;
         private Sunny.UI.UILabel uiLabel5;
         private Sunny.UI.UILabel uiLabel6;
-        private Sunny.UI.UILabel uiLabel7;
-        private Sunny.UI.UILabel uiLabel8;
+        private Sunny.UI.UILabel issueTextLabel;
+        private Sunny.UI.UILabel homepageTextLabel;
         private Sunny.UI.UILabel statusLabel;
         private Sunny.UI.UILabel languageLabel;
         private Sunny.UI.UILabel starLabel;

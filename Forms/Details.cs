@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +16,7 @@ namespace Backet.Forms
     public partial class Details : Form
     {
         private TaskCard taskCard = null;
+        private string[] detailsInfo;
         public Details()
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace Backet.Forms
         {
             this.taskCard = taskCard;
             InitLable();
+            InitLableEvent();
         }
 
         private void InitLable() {
@@ -41,12 +45,51 @@ namespace Backet.Forms
                 statusLabel.Text = "Complete";
             }
             
-            string[] detailsInfo = Tools.GetRepoDetailsInfo(this.taskCard.repoName);
-            descriptionLable.Text = detailsInfo[0];
-            homepageLabel.Text = detailsInfo[1];
-            starLabel.Text = detailsInfo[2];
-            languageLabel.Text = detailsInfo[3];
-            issueLabel.Text = detailsInfo[4];
+            this.detailsInfo = Tools.GetRepoDetailsInfo(this.taskCard.repoName);
+            descriptionLable.Text = this.detailsInfo[0];
+            homepageLabel.Text = this.detailsInfo[1];
+            starLabel.Text = this.detailsInfo[2];
+            languageLabel.Text = this.detailsInfo[3];
+            issueLabel.Text = this.detailsInfo[4];
+        }
+
+        private void InitLableEvent()
+        {
+            repoName.Click += new EventHandler(Reponame_Click);
+            
+            issueLabel.Click += new EventHandler(Issue_Click);
+            issueTextLabel.Click += new EventHandler(Issue_Click);
+
+
+            if (homepageLabel.Text != "")
+            {
+                homepageLabel.Click += new EventHandler(Homepage_Click);
+                homepageTextLabel.Click += new EventHandler(Homepage_Click);
+            }
+
+        }
+
+        private void Reponame_Click(object sender, EventArgs e)
+        {
+            string url = GetRepoUrl();
+            Process.Start(url);
+        }
+
+        private void Issue_Click(object sender, EventArgs e)
+        {
+            string url = GetRepoUrl() + "/issues";
+            Process.Start(url);
+        }
+
+        private void Homepage_Click(object sender, EventArgs e)
+        {
+            string url = this.detailsInfo[1];
+            Process.Start(url);
+        }
+
+        private string GetRepoUrl()
+        {
+            return "https://github.com/" +  this.taskCard.cardInfo[0];
         }
     }
 }
