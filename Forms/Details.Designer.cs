@@ -30,7 +30,7 @@
         {
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
+            this.MoreOptBtn = new Sunny.UI.UISymbolButton();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiLine1 = new Sunny.UI.UILine();
@@ -67,23 +67,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // uiSymbolButton2
+            // MoreOptBtn
             // 
-            this.uiSymbolButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.uiSymbolButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolButton2.ForeColor = System.Drawing.Color.Gray;
-            this.uiSymbolButton2.Location = new System.Drawing.Point(432, 12);
-            this.uiSymbolButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton2.Name = "uiSymbolButton2";
-            this.uiSymbolButton2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
-            this.uiSymbolButton2.RectSize = 2;
-            this.uiSymbolButton2.Size = new System.Drawing.Size(40, 40);
-            this.uiSymbolButton2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiSymbolButton2.Symbol = 61762;
-            this.uiSymbolButton2.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.uiSymbolButton2.TabIndex = 6;
-            this.uiSymbolButton2.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MoreOptBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MoreOptBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.MoreOptBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoreOptBtn.ForeColor = System.Drawing.Color.Gray;
+            this.MoreOptBtn.Location = new System.Drawing.Point(432, 12);
+            this.MoreOptBtn.MinimumSize = new System.Drawing.Size(1, 1);
+            this.MoreOptBtn.Name = "MoreOptBtn";
+            this.MoreOptBtn.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
+            this.MoreOptBtn.RectSize = 2;
+            this.MoreOptBtn.Size = new System.Drawing.Size(40, 40);
+            this.MoreOptBtn.Style = Sunny.UI.UIStyle.Custom;
+            this.MoreOptBtn.Symbol = 61762;
+            this.MoreOptBtn.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.MoreOptBtn.TabIndex = 6;
+            this.MoreOptBtn.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MoreOptBtn.Click += new System.EventHandler(this.MoreOptBtn_Click);
             // 
             // uiLabel1
             // 
@@ -93,6 +94,7 @@
             this.uiLabel1.Size = new System.Drawing.Size(460, 48);
             this.uiLabel1.TabIndex = 7;
             this.uiLabel1.Text = "uiLabel1";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel2
             // 
@@ -102,6 +104,7 @@
             this.uiLabel2.Size = new System.Drawing.Size(460, 60);
             this.uiLabel2.TabIndex = 8;
             this.uiLabel2.Text = "Desciption";
+            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLine1
             // 
@@ -124,6 +127,7 @@
             this.uiLabel3.Size = new System.Drawing.Size(161, 30);
             this.uiLabel3.TabIndex = 10;
             this.uiLabel3.Text = "Details";
+            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Details
             // 
@@ -135,10 +139,11 @@
             this.Controls.Add(this.uiLine1);
             this.Controls.Add(this.uiLabel2);
             this.Controls.Add(this.uiLabel1);
-            this.Controls.Add(this.uiSymbolButton2);
+            this.Controls.Add(this.MoreOptBtn);
             this.Controls.Add(this.uiSymbolButton1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Details";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Details";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -149,7 +154,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private Sunny.UI.UISymbolButton uiSymbolButton1;
-        private Sunny.UI.UISymbolButton uiSymbolButton2;
+        private Sunny.UI.UISymbolButton MoreOptBtn;
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILine uiLine1;

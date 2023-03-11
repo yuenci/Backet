@@ -70,7 +70,9 @@
             this.Settings.AvatarSize = 55;
             this.Settings.BackColor = System.Drawing.Color.Transparent;
             this.Settings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Settings.FillColor = System.Drawing.Color.Transparent;
             this.Settings.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Settings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Settings.Location = new System.Drawing.Point(3, 5);
             this.Settings.MinimumSize = new System.Drawing.Size(1, 1);
             this.Settings.Name = "Settings";
@@ -127,6 +129,7 @@
             this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchTextBox.MinimumSize = new System.Drawing.Size(1, 16);
             this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.RectColor = System.Drawing.Color.Transparent;
             this.SearchTextBox.ShowText = false;
             this.SearchTextBox.Size = new System.Drawing.Size(739, 29);
             this.SearchTextBox.Style = Sunny.UI.UIStyle.Custom;
@@ -142,7 +145,9 @@
             this.SearchBtn.AvatarSize = 55;
             this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
             this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBtn.FillColor = System.Drawing.Color.Transparent;
             this.SearchBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SearchBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.SearchBtn.Location = new System.Drawing.Point(840, 3);
             this.SearchBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.SearchBtn.Name = "SearchBtn";
@@ -158,7 +163,9 @@
             this.MenuBtn.AvatarSize = 55;
             this.MenuBtn.BackColor = System.Drawing.Color.Transparent;
             this.MenuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBtn.FillColor = System.Drawing.Color.Transparent;
             this.MenuBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MenuBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.MenuBtn.Location = new System.Drawing.Point(3, 7);
             this.MenuBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.MenuBtn.Name = "MenuBtn";
@@ -291,6 +298,7 @@
             this.Controls.Add(this.uiPanel8);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.uiPanel7);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

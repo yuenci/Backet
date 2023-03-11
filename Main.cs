@@ -43,10 +43,13 @@ namespace Backet
 
         private void AddCard()
         {
-            for (int i=0;i<8; i++)
+            string[] repoNames = Tools.GetAllRepoNamFromLocal();
+
+
+            for (int i=0;i< repoNames.Length; i++)
             {
                 TaskCard taskCard = new TaskCard();
-                taskCard.InitCard("Java-Car-Rental-System");
+                taskCard.InitCard(repoNames[i]);
                 taskCard.Margin = new Padding(0, 0, 11, 0);
                 CardContainer.Controls.Add(taskCard);
             }
@@ -60,7 +63,6 @@ namespace Backet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Tools.GetRepoCardInfo("Java-Car-Rental-System");
         }
 
         private void button2_Click(object sender, EventArgs e)

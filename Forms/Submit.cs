@@ -39,7 +39,9 @@ namespace Backet
         private string addFigmaURLAndPathToInfo(string repoInfo,string figmaRRL, string path)
         {
             repoInfo = repoInfo.Remove(repoInfo.Length - 1);
-            repoInfo += $",\"figma_url\":\"{figmaRRL}\",\"local_path\":\"{path.Replace("\\", "//")}\"";
+            repoInfo += $",\"figma_url\":\"{figmaRRL}\",";
+            repoInfo += $"\"local_path\":\"{path.Replace("\\", "//")}\",";
+            repoInfo += $"\"complete\":false";
             repoInfo += "}";
             //Console.WriteLine(repoInfo);
             return repoInfo;

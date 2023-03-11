@@ -16,5 +16,10 @@ namespace Backet.Forms
         {
             InitializeComponent();
         }
+
+        private void MoreOptBtn_Click(object sender, EventArgs e)
+        {
+            Submit submit = new Submit();
+        }
     }
 }

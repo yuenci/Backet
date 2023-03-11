@@ -11,6 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms.VisualStyles;
+using System.Windows.Forms;
 
 namespace Backet
 {
@@ -109,6 +110,11 @@ namespace Backet
         {
             string dataFolderPath = Path.Combine(GetRunningPath(), "data");
             string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+
+            /*if (!Directory.Exists(filePath)) {
+                MessageBox.Show($"\"{filePath}\" doesn't exist" );
+            }*/
+
             string[] lines = File.ReadAllLines(filePath);
 
             string full_name = "";
@@ -191,6 +197,24 @@ namespace Backet
             int endIndex = input.LastIndexOf('"');
             string path = input.Substring(startIndex, endIndex - startIndex);
             return path;
+        }
+
+        public static string[] GetAllRepoNamFromLocal()
+        {
+
+            // 获取data文件夹路径
+            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
+
+            // 获取data文件夹下的所有文件
+            string[] fileNames = Directory.GetFiles(dataFolderPath);
+
+            // 去除文件后缀名
+            for (int i = 0; i < fileNames.Length; i++)
+            {
+                fileNames[i] = Path.GetFileNameWithoutExtension(fileNames[i]);
+            }
+
+            return fileNames;
         }
     }
 }
