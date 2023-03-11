@@ -87,6 +87,8 @@ namespace Backet
             this.Close();
         }
 
+        
+
         private string addFigmaURLAndPathToInfo(string repoInfo,string figmaRRL, string path,string taskStatus)
         {
             repoInfo = repoInfo.Remove(repoInfo.Length - 1);
@@ -135,7 +137,16 @@ namespace Backet
             }
 
             Tools.SaveDataToRepoFile(ropeName,data);
+            ReloadCard(ropeName);
             this.Close();
+        }
+
+        private void ReloadCard(string repoName)
+        {
+            Main.instance.taskCardStatus.Remove(repoName);
+            Main.instance.CardContainer.Controls.Remove(Main.instance.taskCardDict[repoName]);
+            Main.instance.taskCardDict.Remove(repoName);
+            Main.instance.AddCardToContainer(repoName);
         }
     }
 }

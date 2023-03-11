@@ -41,6 +41,7 @@
             this.TypeComboBox = new Sunny.UI.UIComboBox();
             this.SelectedTaskNum = new Sunny.UI.UIAvatar();
             this.CardContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.uiPanel7.SuspendLayout();
             this.uiPanel8.SuspendLayout();
             this.SuspendLayout();
@@ -251,12 +252,23 @@
             this.CardContainer.Size = new System.Drawing.Size(929, 515);
             this.CardContainer.TabIndex = 11;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(481, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1034, 661);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CardContainer);
             this.Controls.Add(this.SelectedTaskNum);
             this.Controls.Add(this.TypeComboBox);
@@ -288,7 +300,8 @@
         private Sunny.UI.UIAvatar TaskNum;
         private Sunny.UI.UIComboBox TypeComboBox;
         private Sunny.UI.UIAvatar SelectedTaskNum;
-        private System.Windows.Forms.FlowLayoutPanel CardContainer;
+        public System.Windows.Forms.FlowLayoutPanel CardContainer;
+        private System.Windows.Forms.Button button1;
     }
 }
 

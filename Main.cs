@@ -14,7 +14,7 @@ namespace Backet
 {
     public partial class Main : Form
     {
-        private Dictionary<string, TaskCard> taskCardDict = new Dictionary<string, TaskCard>();
+        public Dictionary<string, TaskCard> taskCardDict = new Dictionary<string, TaskCard>();
         public Dictionary<string, string> taskCardStatus = new Dictionary<string, string>();
         public static Main instance;
         int taskNumberCashe = 0;
@@ -61,13 +61,24 @@ namespace Backet
 
             for (int i=0;i< taskNumber; i++)
             {
-                TaskCard taskCard = new TaskCard();
-                taskCard.InitCard(repoNames[i]);
-                taskCard.Margin = new Padding(0, 0, 11, 0);
-                CardContainer.Controls.Add(taskCard);
+                /* TaskCard taskCard = new TaskCard();
+                 taskCard.InitCard(repoNames[i]);
+                 taskCard.Margin = new Padding(0, 0, 11, 0);
+                 CardContainer.Controls.Add(taskCard);
 
-                taskCardDict.Add(repoNames[i], taskCard);
+                 taskCardDict.Add(repoNames[i], taskCard);*/
+                AddCardToContainer(repoNames[i]);
             }
+        }
+
+        public void AddCardToContainer(string repoNames)
+        {
+            TaskCard taskCard = new TaskCard();
+            taskCard.InitCard(repoNames);
+            taskCard.Margin = new Padding(0, 0, 11, 0);
+            CardContainer.Controls.Add(taskCard);
+
+            taskCardDict.Add(repoNames, taskCard);
         }
 
         public void AddNameAndStatusToMap(string repoName, string status)
@@ -149,6 +160,16 @@ namespace Backet
 
             }
             SelectedTaskNum.Text = num.ToString();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+            taskCardStatus.Remove("Backet");
+            CardContainer.Controls.Remove(taskCardDict["Backet"]);
+            taskCardDict.Remove("Backet");
+            AddCardToContainer("Backet");
+            
         }
     }
 }
