@@ -25,6 +25,13 @@ namespace Backet.Forms
         private void MoreOptBtn_Click(object sender, EventArgs e)
         {
             Submit submit = new Submit();
+
+            string figmaURL = this.taskCard.cardInfo[4];
+            string pathLocal = this.taskCard.cardInfo[5];
+            submit.InitForm(GetRepoUrl(), figmaURL, pathLocal);
+
+            submit.ShowDialog();
+
         }
 
         public void InitTaskCard(TaskCard taskCard)

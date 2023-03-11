@@ -43,10 +43,15 @@ namespace Backet
 
         private void AddCard()
         {
+            
+            
             string[] repoNames = Tools.GetAllRepoNamFromLocal();
+            int taskNumber = repoNames.Length;
+            TaskNum.Text = taskNumber.ToString();
+            SelectedTaskNum.Text = taskNumber.ToString();
 
 
-            for (int i=0;i< repoNames.Length; i++)
+            for (int i=0;i< taskNumber; i++)
             {
                 TaskCard taskCard = new TaskCard();
                 taskCard.InitCard(repoNames[i]);

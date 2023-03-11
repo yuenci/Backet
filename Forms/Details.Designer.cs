@@ -45,6 +45,7 @@
             this.starLabel = new Sunny.UI.UILabel();
             this.issueLabel = new Sunny.UI.UILabel();
             this.homepageLabel = new Sunny.UI.UILabel();
+            this.DeleteButton = new Sunny.UI.UISymbolButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -258,12 +259,32 @@
             this.homepageLabel.Text = "Desciption";
             this.homepageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.DeleteButton.Location = new System.Drawing.Point(128, 509);
+            this.DeleteButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
+            this.DeleteButton.RectSize = 2;
+            this.DeleteButton.Size = new System.Drawing.Size(223, 40);
+            this.DeleteButton.Style = Sunny.UI.UIStyle.Custom;
+            this.DeleteButton.Symbol = 57369;
+            this.DeleteButton.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.DeleteButton.TabIndex = 21;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            // 
             // Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(484, 561);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.homepageLabel);
             this.Controls.Add(this.issueLabel);
             this.Controls.Add(this.starLabel);
@@ -308,5 +329,6 @@
         private Sunny.UI.UILabel starLabel;
         private Sunny.UI.UILabel issueLabel;
         private Sunny.UI.UILabel homepageLabel;
+        private Sunny.UI.UISymbolButton DeleteButton;
     }
 }

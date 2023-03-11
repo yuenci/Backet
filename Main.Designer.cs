@@ -39,7 +39,7 @@
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.TaskNum = new Sunny.UI.UIAvatar();
             this.TypeComboBox = new Sunny.UI.UIComboBox();
-            this.uiAvatar1 = new Sunny.UI.UIAvatar();
+            this.SelectedTaskNum = new Sunny.UI.UIAvatar();
             this.CardContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -227,22 +227,22 @@
             this.TypeComboBox.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.TypeComboBox.Watermark = "";
             // 
-            // uiAvatar1
+            // SelectedTaskNum
             // 
-            this.uiAvatar1.AvatarSize = 20;
-            this.uiAvatar1.BackColor = System.Drawing.Color.Transparent;
-            this.uiAvatar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
-            this.uiAvatar1.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiAvatar1.ForeColor = System.Drawing.Color.DimGray;
-            this.uiAvatar1.Icon = Sunny.UI.UIAvatar.UIIcon.Text;
-            this.uiAvatar1.Location = new System.Drawing.Point(322, 98);
-            this.uiAvatar1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiAvatar1.Name = "uiAvatar1";
-            this.uiAvatar1.Size = new System.Drawing.Size(25, 25);
-            this.uiAvatar1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiAvatar1.Symbol = 61543;
-            this.uiAvatar1.TabIndex = 10;
-            this.uiAvatar1.Text = "6";
+            this.SelectedTaskNum.AvatarSize = 20;
+            this.SelectedTaskNum.BackColor = System.Drawing.Color.Transparent;
+            this.SelectedTaskNum.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
+            this.SelectedTaskNum.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedTaskNum.ForeColor = System.Drawing.Color.DimGray;
+            this.SelectedTaskNum.Icon = Sunny.UI.UIAvatar.UIIcon.Text;
+            this.SelectedTaskNum.Location = new System.Drawing.Point(322, 98);
+            this.SelectedTaskNum.MinimumSize = new System.Drawing.Size(1, 1);
+            this.SelectedTaskNum.Name = "SelectedTaskNum";
+            this.SelectedTaskNum.Size = new System.Drawing.Size(25, 25);
+            this.SelectedTaskNum.Style = Sunny.UI.UIStyle.Custom;
+            this.SelectedTaskNum.Symbol = 61543;
+            this.SelectedTaskNum.TabIndex = 10;
+            this.SelectedTaskNum.Text = "6";
             // 
             // CardContainer
             // 
@@ -291,7 +291,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.CardContainer);
-            this.Controls.Add(this.uiAvatar1);
+            this.Controls.Add(this.SelectedTaskNum);
             this.Controls.Add(this.TypeComboBox);
             this.Controls.Add(this.TaskNum);
             this.Controls.Add(this.uiLabel1);
@@ -320,7 +320,7 @@
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UIAvatar TaskNum;
         private Sunny.UI.UIComboBox TypeComboBox;
-        private Sunny.UI.UIAvatar uiAvatar1;
+        private Sunny.UI.UIAvatar SelectedTaskNum;
         private System.Windows.Forms.FlowLayoutPanel CardContainer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

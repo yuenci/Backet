@@ -17,6 +17,14 @@ namespace Backet
             InitializeComponent();
         }
 
+        public void InitForm(string repoURL, string figmarURL, string localPath)
+        {
+            RepoURL.Text = repoURL;
+            RepoURL.Enabled = false;
+            FigmaURL.Text = figmarURL;
+            LocalPath.Text = localPath;
+        }
+
         private async void SubmitBtn_Click(object sender, EventArgs e)
         {
             string repoURL = RepoURL.Text;
