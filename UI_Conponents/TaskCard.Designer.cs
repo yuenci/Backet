@@ -28,50 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.uiLabel2 = new Sunny.UI.UILabel();
+            this.mainPanel = new Sunny.UI.UIPanel();
+            this.UpdateDate = new Sunny.UI.UILabel();
             this.ProcessBar = new Sunny.UI.UIProcessBar();
-            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.StartDate = new Sunny.UI.UILabel();
             this.uiAvatar2 = new Sunny.UI.UIAvatar();
             this.TaskName = new Sunny.UI.UILabel();
             this.IconsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.uiPanel1.SuspendLayout();
+            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // uiPanel1
+            // mainPanel
             // 
-            this.uiPanel1.Controls.Add(this.uiLabel2);
-            this.uiPanel1.Controls.Add(this.ProcessBar);
-            this.uiPanel1.Controls.Add(this.uiLabel1);
-            this.uiPanel1.Controls.Add(this.uiAvatar2);
-            this.uiPanel1.Controls.Add(this.TaskName);
-            this.uiPanel1.Controls.Add(this.IconsPanel);
-            this.uiPanel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.uiPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.uiPanel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiPanel1.Location = new System.Drawing.Point(5, 5);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Radius = 10;
-            this.uiPanel1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
-            this.uiPanel1.RectSize = 2;
-            this.uiPanel1.Size = new System.Drawing.Size(280, 230);
-            this.uiPanel1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiPanel1.TabIndex = 2;
-            this.uiPanel1.Text = null;
-            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mainPanel.Controls.Add(this.UpdateDate);
+            this.mainPanel.Controls.Add(this.ProcessBar);
+            this.mainPanel.Controls.Add(this.StartDate);
+            this.mainPanel.Controls.Add(this.uiAvatar2);
+            this.mainPanel.Controls.Add(this.TaskName);
+            this.mainPanel.Controls.Add(this.IconsPanel);
+            this.mainPanel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.mainPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.mainPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainPanel.Location = new System.Drawing.Point(5, 5);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.mainPanel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Radius = 10;
+            this.mainPanel.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
+            this.mainPanel.RectSize = 2;
+            this.mainPanel.Size = new System.Drawing.Size(280, 230);
+            this.mainPanel.Style = Sunny.UI.UIStyle.Custom;
+            this.mainPanel.TabIndex = 2;
+            this.mainPanel.Text = null;
+            this.mainPanel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiLabel2
+            // UpdateDate
             // 
-            this.uiLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel2.Location = new System.Drawing.Point(12, 191);
-            this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(201, 23);
-            this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLabel2.TabIndex = 8;
-            this.uiLabel2.Text = "Last updated: 10 Dec, 2022";
-            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.UpdateDate.BackColor = System.Drawing.Color.Transparent;
+            this.UpdateDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateDate.Location = new System.Drawing.Point(12, 191);
+            this.UpdateDate.Name = "UpdateDate";
+            this.UpdateDate.Size = new System.Drawing.Size(201, 23);
+            this.UpdateDate.Style = Sunny.UI.UIStyle.Custom;
+            this.UpdateDate.TabIndex = 8;
+            this.UpdateDate.Text = "Last updated: 10 Dec, 2022";
+            this.UpdateDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ProcessBar
             // 
@@ -87,16 +88,17 @@
             this.ProcessBar.Text = "uiProcessBar1";
             this.ProcessBar.Value = 50;
             // 
-            // uiLabel1
+            // StartDate
             // 
-            this.uiLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel1.Location = new System.Drawing.Point(45, 126);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(201, 23);
-            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLabel1.TabIndex = 6;
-            this.uiLabel1.Text = "Start: Nov 12";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.StartDate.BackColor = System.Drawing.Color.Transparent;
+            this.StartDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartDate.Location = new System.Drawing.Point(45, 126);
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Size = new System.Drawing.Size(201, 23);
+            this.StartDate.Style = Sunny.UI.UIStyle.Custom;
+            this.StartDate.TabIndex = 6;
+            this.StartDate.Text = "Start: Nov 12";
+            this.StartDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiAvatar2
             // 
@@ -117,6 +119,7 @@
             // 
             // TaskName
             // 
+            this.TaskName.BackColor = System.Drawing.Color.Transparent;
             this.TaskName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TaskName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TaskName.Location = new System.Drawing.Point(12, 67);
@@ -130,6 +133,7 @@
             // 
             // IconsPanel
             // 
+            this.IconsPanel.BackColor = System.Drawing.Color.Transparent;
             this.IconsPanel.Location = new System.Drawing.Point(16, 13);
             this.IconsPanel.Name = "IconsPanel";
             this.IconsPanel.Size = new System.Drawing.Size(180, 35);
@@ -140,22 +144,22 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.Controls.Add(this.uiPanel1);
+            this.Controls.Add(this.mainPanel);
             this.Name = "TaskCard";
             this.Size = new System.Drawing.Size(290, 240);
-            this.uiPanel1.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Sunny.UI.UIPanel uiPanel1;
+        private Sunny.UI.UIPanel mainPanel;
         private System.Windows.Forms.FlowLayoutPanel IconsPanel;
         private Sunny.UI.UILabel TaskName;
-        private Sunny.UI.UILabel uiLabel2;
+        private Sunny.UI.UILabel UpdateDate;
         private Sunny.UI.UIProcessBar ProcessBar;
-        private Sunny.UI.UILabel uiLabel1;
+        private Sunny.UI.UILabel StartDate;
         private Sunny.UI.UIAvatar uiAvatar2;
     }
 }

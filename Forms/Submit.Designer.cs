@@ -32,10 +32,10 @@
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiLabel3 = new Sunny.UI.UILabel();
-            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
-            this.uiTextBox1 = new Sunny.UI.UITextBox();
-            this.uiTextBox2 = new Sunny.UI.UITextBox();
-            this.uiTextBox3 = new Sunny.UI.UITextBox();
+            this.SubmitBtn = new Sunny.UI.UISymbolButton();
+            this.RepoURL = new Sunny.UI.UITextBox();
+            this.FigmaURL = new Sunny.UI.UITextBox();
+            this.LocalPath = new Sunny.UI.UITextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -69,59 +69,60 @@
             this.uiLabel3.Text = "Local Path";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiSymbolButton1
+            // SubmitBtn
             // 
-            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolButton1.Location = new System.Drawing.Point(19, 276);
-            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton1.Name = "uiSymbolButton1";
-            this.uiSymbolButton1.Size = new System.Drawing.Size(453, 35);
-            this.uiSymbolButton1.TabIndex = 3;
-            this.uiSymbolButton1.Text = "   Submit";
-            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SubmitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SubmitBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubmitBtn.Location = new System.Drawing.Point(19, 276);
+            this.SubmitBtn.MinimumSize = new System.Drawing.Size(1, 1);
+            this.SubmitBtn.Name = "SubmitBtn";
+            this.SubmitBtn.Size = new System.Drawing.Size(453, 35);
+            this.SubmitBtn.TabIndex = 3;
+            this.SubmitBtn.Text = "   Submit";
+            this.SubmitBtn.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SubmitBtn.Click += new System.EventHandler(this.SubmitBtn_Click);
             // 
-            // uiTextBox1
+            // RepoURL
             // 
-            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox1.Location = new System.Drawing.Point(19, 53);
-            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
-            this.uiTextBox1.Name = "uiTextBox1";
-            this.uiTextBox1.ShowText = false;
-            this.uiTextBox1.Size = new System.Drawing.Size(452, 29);
-            this.uiTextBox1.TabIndex = 4;
-            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox1.Watermark = "";
+            this.RepoURL.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.RepoURL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RepoURL.Location = new System.Drawing.Point(19, 53);
+            this.RepoURL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RepoURL.MinimumSize = new System.Drawing.Size(1, 16);
+            this.RepoURL.Name = "RepoURL";
+            this.RepoURL.ShowText = false;
+            this.RepoURL.Size = new System.Drawing.Size(452, 29);
+            this.RepoURL.TabIndex = 4;
+            this.RepoURL.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RepoURL.Watermark = "";
             // 
-            // uiTextBox2
+            // FigmaURL
             // 
-            this.uiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox2.Location = new System.Drawing.Point(19, 131);
-            this.uiTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox2.MinimumSize = new System.Drawing.Size(1, 16);
-            this.uiTextBox2.Name = "uiTextBox2";
-            this.uiTextBox2.ShowText = false;
-            this.uiTextBox2.Size = new System.Drawing.Size(452, 29);
-            this.uiTextBox2.TabIndex = 5;
-            this.uiTextBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox2.Watermark = "";
+            this.FigmaURL.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.FigmaURL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FigmaURL.Location = new System.Drawing.Point(19, 131);
+            this.FigmaURL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FigmaURL.MinimumSize = new System.Drawing.Size(1, 16);
+            this.FigmaURL.Name = "FigmaURL";
+            this.FigmaURL.ShowText = false;
+            this.FigmaURL.Size = new System.Drawing.Size(452, 29);
+            this.FigmaURL.TabIndex = 5;
+            this.FigmaURL.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FigmaURL.Watermark = "";
             // 
-            // uiTextBox3
+            // LocalPath
             // 
-            this.uiTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiTextBox3.Location = new System.Drawing.Point(19, 211);
-            this.uiTextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox3.MinimumSize = new System.Drawing.Size(1, 16);
-            this.uiTextBox3.Name = "uiTextBox3";
-            this.uiTextBox3.ShowText = false;
-            this.uiTextBox3.Size = new System.Drawing.Size(452, 29);
-            this.uiTextBox3.TabIndex = 5;
-            this.uiTextBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox3.Watermark = "";
+            this.LocalPath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LocalPath.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocalPath.Location = new System.Drawing.Point(19, 211);
+            this.LocalPath.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LocalPath.MinimumSize = new System.Drawing.Size(1, 16);
+            this.LocalPath.Name = "LocalPath";
+            this.LocalPath.ShowText = false;
+            this.LocalPath.Size = new System.Drawing.Size(452, 29);
+            this.LocalPath.TabIndex = 5;
+            this.LocalPath.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LocalPath.Watermark = "";
             // 
             // label1
             // 
@@ -139,10 +140,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 367);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.uiTextBox3);
-            this.Controls.Add(this.uiTextBox2);
-            this.Controls.Add(this.uiTextBox1);
-            this.Controls.Add(this.uiSymbolButton1);
+            this.Controls.Add(this.LocalPath);
+            this.Controls.Add(this.FigmaURL);
+            this.Controls.Add(this.RepoURL);
+            this.Controls.Add(this.SubmitBtn);
             this.Controls.Add(this.uiLabel3);
             this.Controls.Add(this.uiLabel2);
             this.Controls.Add(this.uiLabel1);
@@ -161,10 +162,10 @@
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILabel uiLabel3;
-        private Sunny.UI.UISymbolButton uiSymbolButton1;
-        private Sunny.UI.UITextBox uiTextBox1;
-        private Sunny.UI.UITextBox uiTextBox2;
-        private Sunny.UI.UITextBox uiTextBox3;
+        private Sunny.UI.UISymbolButton SubmitBtn;
+        private Sunny.UI.UITextBox RepoURL;
+        private Sunny.UI.UITextBox FigmaURL;
+        private Sunny.UI.UITextBox LocalPath;
         private System.Windows.Forms.Label label1;
     }
 }
