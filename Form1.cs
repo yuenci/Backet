@@ -16,5 +16,25 @@ namespace Backet
         {
             InitializeComponent();
         }
+
+        private void SearchTextBox_Enter(object sender, EventArgs e)
+        {
+            string text = SearchTextBox.Text;
+            if (text == "Search")
+            {
+                SearchTextBox.Text = "";
+                SearchTextBox.ForeColor = Color.Black;
+            }
+        }
+
+        private void SearchTextBox_Leave(object sender, EventArgs e)
+        {
+            string text = SearchTextBox.Text;
+            if (text == "")
+            {
+                SearchTextBox.Text = "Search";
+                SearchTextBox.ForeColor = Color.Silver;
+            }
+        }
     }
 }
