@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Backet.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,12 @@ namespace Backet.UI_Conponents
             pictureBox.Cursor = Cursors.Hand;
 
             IconsPanel.Controls.Add(pictureBox);
+        }
+
+        private void TaskName_Click(object sender, EventArgs e)
+        {
+            Details details = new Details();
+            details.ShowDialog();
         }
     }
 }

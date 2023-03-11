@@ -126,6 +126,7 @@
             this.TaskName.TabIndex = 1;
             this.TaskName.Text = "uiLabel1uiLabel1uiLabel1uiLabel1uiLabel1";
             this.TaskName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TaskName.Click += new System.EventHandler(this.TaskName_Click);
             // 
             // IconsPanel
             // 
