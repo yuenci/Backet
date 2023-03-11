@@ -83,6 +83,7 @@ namespace Backet
             string repoInfo = await Tools.GetRepoInfo(repoURL, Token.token);
             repoInfo = addFigmaURLAndPathToInfo(repoInfo, figma, file, taskStatus);
             Tools.WriteRepoJson(repoName, Tools.FormatJson(repoInfo));
+            Main.instance.InitCards();
             this.Close();
         }
 

@@ -22,9 +22,8 @@ namespace Backet
         {
             instance = this;
             InitializeComponent();
-            AddCard();
             Tools.DetectDataFile();
-            
+            InitCards();
         }
 
         private void SearchTextBox_Enter(object sender, EventArgs e)
@@ -47,10 +46,12 @@ namespace Backet
             }
         }
 
-        private void AddCard()
+        public void InitCards()
         {
-            
-            
+            taskCardDict.Clear();
+            taskCardStatus.Clear();
+            CardContainer.Controls.Clear();
+
             string[] repoNames = Tools.GetAllRepoNamFromLocal();
             int taskNumber = repoNames.Length;
             taskNumberCashe = taskNumber;

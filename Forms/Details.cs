@@ -135,6 +135,18 @@ namespace Backet.Forms
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             Tools.DeleteRepoFile(this.taskCard.repoName);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this Repo?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Main.instance.InitCards();
+                this.Close();
+            }
+            else
+            {
+                // to nothing
+            }
+            
         }
     }
 }
