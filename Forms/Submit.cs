@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ExCSS;
+using Sunny.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +9,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -19,6 +22,7 @@ namespace Backet
         private string FigmaURLCache = ""; 
         private string LocalPathCache = "";
         private string CompleteStatusCache = "";
+        private bool IsFromDetailsPage = false;
         public Submit()
         {
             InitializeComponent();
@@ -38,6 +42,8 @@ namespace Backet
 
             ShowCompleteValueToText(complete);
             this.CompleteStatusCache = complete;
+
+            IsFromDetailsPage = true;
         }
 
         private async void SubmitBtn_Click(object sender, EventArgs e)
@@ -51,19 +57,24 @@ namespace Backet
             if (this.FigmaURLCache != "" || this.LocalPathCache != "")
             {
                 // if any modify
-                if (this.FigmaURL.Text != this.FigmaURLCache 
-                    || this.LocalPath.Text != this.LocalPathCache
-                    || this.TaskStatusComboBox.Text != this.CompleteStatusCache)
+                if (this.FigmaURL.Text != this.FigmaURLCache  || this.LocalPath.Text != this.LocalPathCache )
                 {
+                    Console.WriteLine("yes11!!!");
                     UpdateInfo();
+                    this.Close();
                     return;
                 }
-                this.Close();
+                else
+                {
+                    UpdateVisibility();
+                    this.Close();
+                    return;
+                }
             }
 
 
 
-
+            // checking input
             if (repoURL == "" || !Tools.IsValidUrl(repoURL))
             {
                 MessageBox.Show("Please Enter Valid Repositorie URL");
@@ -81,7 +92,7 @@ namespace Backet
                 taskStatus=  TaskStatusComboBox.SelectedItem.ToString();
             }
 
-            
+
 
 
 
@@ -91,6 +102,7 @@ namespace Backet
             Tools.WriteRepoJson(repoName, Tools.FormatJson(repoInfo));
             Main.instance.InitCards();
             this.Close();
+
         }
 
         
@@ -168,22 +180,56 @@ namespace Backet
 
         private void ShowCompleteValueToText(string completeVal)
         {
-            if (completeVal == "false")
+            if (completeVal == "null")
             {
-                TaskStatusComboBox.Text = "Active";
+                //TaskStatusComboBox.Text = "Active";
+                TaskStatusComboBox.SelectedIndex = 0;
 
             }
-            else if (completeVal == "null")
+            else if (completeVal == "false")
             {
-                TaskStatusComboBox.Text = "Todo";
+                //TaskStatusComboBox.Text = "Todo";
+                TaskStatusComboBox.SelectedIndex = 1;
             }
             else
             {
-                TaskStatusComboBox.Text = "Complete";
+                //TaskStatusComboBox.Text = "Complete";
+                TaskStatusComboBox.SelectedIndex = 2;
             }
 
 
             TaskStatusComboBox.Enabled = false;
         }
+
+        private async void UpdateVisibility()
+        {
+            string repoURL = RepoURL.Text;
+            string repoName = Tools.getRepoNameFromURL(repoURL);
+            string repoInfoGithub = await Tools.GetRepoInfo(repoURL, Token.token);
+
+            string repoDataLocal = Tools.GetDataFromRepoName(repoName, "string");
+
+
+            Regex regex = new Regex("\"visibility\"\\s*:\\s*\"(private|public)\"");
+
+            MatchCollection matches1 = regex.Matches(repoInfoGithub);
+            string visibilityGithub = matches1[0].Groups[1].Value;
+
+            MatchCollection matches2 = regex.Matches(repoDataLocal);
+            string visibilityLocal = matches2[0].Groups[1].Value;
+
+            if (visibilityGithub == visibilityLocal) return;
+
+            //Console.WriteLine(visibilityGithub + "--" + visibilityLocal);
+
+            string newRes;
+            newRes = repoDataLocal.Replace("\"visibility\": \"private\"", $"\"visibility\": \"{visibilityGithub}\"");
+            newRes = newRes.Replace("\"visibility\": \"public\"", $"\"visibility\": \"{visibilityGithub}\"");
+
+            Tools.SaveDataToRepoFile(repoName, newRes);
+
+            Main.instance.InitCards();
+        }
+
     }
 }

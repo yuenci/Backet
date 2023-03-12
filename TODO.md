@@ -11,3 +11,4 @@
 - [ ] Mobile version for convenient checking 
 - [x] Refresh button
 - [x] Finished card
+- [ ] fix: can't update after change visibility;
