@@ -36,6 +36,7 @@
             // 
             // ComplateLabel
             // 
+            this.ComplateLabel.BackColor = System.Drawing.Color.Transparent;
             this.ComplateLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ComplateLabel.Enabled = false;
             this.ComplateLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -53,6 +54,7 @@
             // 
             // EndLabel
             // 
+            this.EndLabel.BackColor = System.Drawing.Color.Transparent;
             this.EndLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndLabel.Location = new System.Drawing.Point(48, 9);
             this.EndLabel.Name = "EndLabel";
@@ -93,7 +95,7 @@
             // FinishedInfoArea
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.UpdateDate);
             this.Controls.Add(this.ComplateLabel);
             this.Controls.Add(this.EndLabel);

@@ -77,6 +77,7 @@
             this.Settings.SymbolSize = 35;
             this.Settings.TabIndex = 9;
             this.Settings.Text = "uiAvatar2";
+            this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
             // AddBtn
             // 
@@ -140,9 +141,7 @@
             this.SearchBtn.AvatarSize = 55;
             this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
             this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchBtn.FillColor = System.Drawing.Color.Transparent;
             this.SearchBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SearchBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.SearchBtn.Location = new System.Drawing.Point(840, 3);
             this.SearchBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.SearchBtn.Name = "SearchBtn";

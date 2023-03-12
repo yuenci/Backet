@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Backet
 {
@@ -189,6 +190,12 @@ namespace Backet
         private void TaskIcon_Click(object sender, EventArgs e)
         {
             InitCards();
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            string dataFolderPath = Path.Combine(Tools.GetRunningPath(), "data");
+            Process.Start("explorer.exe", dataFolderPath);
         }
     }
 }
