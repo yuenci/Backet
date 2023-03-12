@@ -85,6 +85,12 @@
     <Compile Include="Forms\Details.Designer.cs">
       <DependentUpon>Details.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,7 +111,7 @@
     <Compile Include="Forms\SunnyUIComponents.Designer.cs">
       <DependentUpon>SunnyUIComponents.cs</DependentUpon>
     </Compile>
-    <Compile Include="Token.cs" />
+    <Compile Include="Others\Token.cs" />
     <Compile Include="Others\Tools.cs" />
     <Compile Include="UI_Conponents\FinishedInfoArea.cs">
       <SubType>UserControl</SubType>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Details.resx">
       <DependentUpon>Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Submit.resx">
       <DependentUpon>Submit.cs</DependentUpon>

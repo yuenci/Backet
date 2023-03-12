@@ -19,6 +19,7 @@ using System.Drawing;
 using Svg;
 using Svg.Transforms;
 using System.Runtime.InteropServices.ComTypes;
+using System.Net.NetworkInformation;
 
 namespace Backet
 {
@@ -41,10 +42,15 @@ namespace Backet
             return Directory.Exists(folderPath);
         }
 
-        static public dynamic GetDataFromRepoName(string repoName, string mode = "array")
+        static public string GetDataFilePath(string fileName)
         {
             string dataFolderPath = Path.Combine(GetRunningPath(), "data");
-            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+            return Path.Combine(dataFolderPath, fileName);
+        }
+
+        static public dynamic GetDataFromRepoName(string repoName, string mode = "array")
+        {
+            string filePath = GetDataFilePath($"{repoName}.json");
 
             if (!IsPathExist(filePath))
             {
@@ -65,8 +71,7 @@ namespace Backet
 
         static public void SaveDataToRepoFile(string repoName, string[] data)
         {
-            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
-            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+            string filePath = GetDataFilePath($"{repoName}.json");
 
             if (!File.Exists(filePath))
             {
@@ -78,15 +83,13 @@ namespace Backet
 
         static public void DeleteRepoFile(string repoName)
         {
-            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
-            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+            string filePath = GetDataFilePath($"{repoName}.json");
             File.Delete(filePath);
         }
 
         static public void SaveDataToRepoFile(string repoName, string data)
         {
-            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
-            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+            string filePath = GetDataFilePath($"{repoName}.json");
 
             if (!File.Exists(filePath))
             {
@@ -98,9 +101,7 @@ namespace Backet
 
         static public void  DetectDataFile()
         {
-            string currentDirectory = Directory.GetCurrentDirectory();
-            
-            string dataFolderPath = Path.Combine(currentDirectory, "data");
+            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
  
 
             if (!Directory.Exists(dataFolderPath))
@@ -112,6 +113,24 @@ namespace Backet
             {
                 Console.WriteLine("Data Folder exist");
             }
+        }
+        
+        static public bool DetectTokenFile()
+        {
+            string filePath = GetDataFilePath("token.txt");
+            if (!File.Exists(filePath))
+            {
+                File.Create(filePath);
+                return false;
+            }
+
+            string token = File.ReadAllText(filePath);
+            Token.token = token;
+            if (token.Length == 0)
+            {
+                return false;
+            }
+            return true;
         }
 
         public static async Task<string> GetRepoInfo(string repoUrl, string apiToken)
@@ -147,9 +166,7 @@ namespace Backet
 
         public static void WriteRepoJson(string repoName, string textContent)
         {
-            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
-            
-            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+            string filePath = GetDataFilePath($"{repoName}.json");
             File.WriteAllText(filePath, textContent);
         }
 
@@ -180,8 +197,7 @@ namespace Backet
 
         public static string[] GetRepoCardInfo(string repoName)
         {
-            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
-            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+            string filePath = GetDataFilePath($"{repoName}.json");
 
             /*if (!Directory.Exists(filePath)) {
                 MessageBox.Show($"\"{filePath}\" doesn't exist" );
@@ -268,8 +284,7 @@ namespace Backet
 
         public static string[] GetRepoDetailsInfo(string repoName)
         {
-            string dataFolderPath = Path.Combine(GetRunningPath(), "data");
-            string filePath = Path.Combine(dataFolderPath, $"{repoName}.json");
+            string filePath = GetDataFilePath($"{repoName}.json");
 
             string[] lines = File.ReadAllLines(filePath);
 
@@ -378,7 +393,7 @@ namespace Backet
             string dataFolderPath = Path.Combine(GetRunningPath(), "data");
 
             // 获取data文件夹下的所有文件
-            string[] fileNames = Directory.GetFiles(dataFolderPath);
+            string[] fileNames = Directory.GetFiles(dataFolderPath, "*.json");
 
             // 去除文件后缀名
             for (int i = 0; i < fileNames.Length; i++)

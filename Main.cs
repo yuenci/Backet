@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Backet.Forms;
 
 namespace Backet
 {
@@ -19,13 +20,27 @@ namespace Backet
         public Dictionary<string, string> taskCardStatus = new Dictionary<string, string>();
         public static Main instance;
         int taskNumberCashe = 0;
+        bool isTokenExist = false;
         public Main()
         {
             instance = this;
             InitializeComponent();
             Tools.DetectDataFile();
+            isTokenExist = Tools.DetectTokenFile();
             InitStyle();
+            InitToken();
             InitCards();
+        }
+        private void InitToken()
+        {
+            if (isTokenExist == true) return;
+            DialogResult result = MessageBox.Show("Please obtain a GitHub token before using this app's features. You can generate a token by following the instructions on GitHub's website.\r\n", "Warning", MessageBoxButtons.OK);
+            if (result == DialogResult.OK)
+            {
+                Process.Start("https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token");
+                new Settings().ShowDialog();
+            }
+
         }
         private void InitStyle()
         {
@@ -63,6 +78,8 @@ namespace Backet
 
         public void InitCards()
         {
+            if (isTokenExist != true) return;
+
             taskCardDict.Clear();
             taskCardStatus.Clear();
             CardContainer.Controls.Clear();
@@ -82,6 +99,7 @@ namespace Backet
                  CardContainer.Controls.Add(taskCard);
 
                  taskCardDict.Add(repoNames[i], taskCard);*/
+                //if (repoNames[i] == "token") continue;
                 AddCardToContainer(repoNames[i]);
             }
         }
@@ -194,8 +212,8 @@ namespace Backet
 
         private void Settings_Click(object sender, EventArgs e)
         {
-            string dataFolderPath = Path.Combine(Tools.GetRunningPath(), "data");
-            Process.Start("explorer.exe", dataFolderPath);
+            Settings settings = new Settings();
+            settings.ShowDialog();
         }
     }
 }
