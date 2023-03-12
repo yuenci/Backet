@@ -182,6 +182,7 @@
             this.Controls.Add(this.uiLabel2);
             this.Controls.Add(this.uiLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Submit";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

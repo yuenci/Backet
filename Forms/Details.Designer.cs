@@ -332,6 +332,7 @@
             this.Controls.Add(this.repoName);
             this.Controls.Add(this.MoreOptBtn);
             this.Controls.Add(this.complereBtn);
+            this.MaximizeBox = false;
             this.Name = "Details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Details";
