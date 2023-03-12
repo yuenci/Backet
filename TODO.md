@@ -2,7 +2,7 @@
 - [x] Add combo Box select
 - [x] Update data after modify rope data
 - [x] Update panel  after add new repo card
-- [ ] Language display with photo
+- [x] Language display with photo
 - [x] Add star to star part
 - [x] Format datetime
 - [ ] Sort the cards(created date, update date, alpha)
