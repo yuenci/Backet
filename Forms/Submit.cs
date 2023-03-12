@@ -36,7 +36,7 @@ namespace Backet
             this.LocalPath.Text = localPath;
             this.LocalPathCache = localPath;
 
-            TaskStatusComboBox.Text = complete;
+            ShowCompleteValueToText(complete);
             this.CompleteStatusCache = complete;
         }
 
@@ -162,7 +162,28 @@ namespace Backet
 
         private void ReplaceCompleteStatus(string oldVal,string newVal)
         {
-            
+            //todo
+        }
+
+
+        private void ShowCompleteValueToText(string completeVal)
+        {
+            if (completeVal == "false")
+            {
+                TaskStatusComboBox.Text = "Active";
+
+            }
+            else if (completeVal == "null")
+            {
+                TaskStatusComboBox.Text = "Todo";
+            }
+            else
+            {
+                TaskStatusComboBox.Text = "Complete";
+            }
+
+
+            TaskStatusComboBox.Enabled = false;
         }
     }
 }
