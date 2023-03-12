@@ -18,12 +18,13 @@ namespace Backet
         private string RopeURLCache = "";
         private string FigmaURLCache = ""; 
         private string LocalPathCache = "";
+        private string CompleteStatusCache = "";
         public Submit()
         {
             InitializeComponent();
         }
 
-        public void InitForm(string repoURL, string figmarURL, string localPath)
+        public void InitForm(string repoURL, string figmarURL, string localPath,string complete)
         {
             this.RepoURL.Text = repoURL;
             RopeURLCache = repoURL;
@@ -34,6 +35,9 @@ namespace Backet
 
             this.LocalPath.Text = localPath;
             this.LocalPathCache = localPath;
+
+            TaskStatusComboBox.Text = complete;
+            this.CompleteStatusCache = complete;
         }
 
         private async void SubmitBtn_Click(object sender, EventArgs e)
@@ -47,7 +51,9 @@ namespace Backet
             if (this.FigmaURLCache != "" || this.LocalPathCache != "")
             {
                 // if any modify
-                if (this.FigmaURL.Text != this.FigmaURLCache || this.LocalPath.Text != this.LocalPathCache)
+                if (this.FigmaURL.Text != this.FigmaURLCache 
+                    || this.LocalPath.Text != this.LocalPathCache
+                    || this.TaskStatusComboBox.Text != this.CompleteStatusCache)
                 {
                     UpdateInfo();
                     return;
@@ -136,6 +142,11 @@ namespace Backet
                 data = data.Replace(this.LocalPathCache, this.LocalPath.Text);
             }
 
+            if (this.TaskStatusComboBox.Text != this.CompleteStatusCache)
+            {
+                ReplaceCompleteStatus(this.TaskStatusComboBox.Text,this.CompleteStatusCache);
+            }
+
             Tools.SaveDataToRepoFile(ropeName,data);
             ReloadCard(ropeName);
             this.Close();
@@ -147,6 +158,11 @@ namespace Backet
             Main.instance.CardContainer.Controls.Remove(Main.instance.taskCardDict[repoName]);
             Main.instance.taskCardDict.Remove(repoName);
             Main.instance.AddCardToContainer(repoName);
+        }
+
+        private void ReplaceCompleteStatus(string oldVal,string newVal)
+        {
+            
         }
     }
 }

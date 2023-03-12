@@ -30,7 +30,8 @@ namespace Backet.Forms
 
             string figmaURL = this.taskCard.cardInfo[4];
             string pathLocal = this.taskCard.cardInfo[5];
-            submit.InitForm(GetRepoUrl(), figmaURL, pathLocal);
+            string complete = this.taskCard.cardInfo[6];
+            submit.InitForm(GetRepoUrl(), figmaURL, pathLocal, complete);
 
             submit.ShowDialog();
 
@@ -122,13 +123,16 @@ namespace Backet.Forms
             {
                 if (data[i].Contains("complete"))
                 {
-                    list[i] = data[i].Replace("false", "true,");
-                    list[i] = data[i].Replace("null", "true,");
+                    Console.WriteLine(data[i]);
+                    list[i] = list[i].Replace("false", "true,");
+                    list[i] = list[i].Replace("null", "true,");
                     list.Insert(i + 1, $"  \"completeDate\": \"{dataTime}\"");
                 }
             }
             string[] newData = list.ToArray();
             Tools.SaveDataToRepoFile(repoName, newData);
+            Main.instance.InitCards();
+            this.Close();
         }
 
         private void uiSymbolButton1_Click(object sender, EventArgs e)
@@ -139,14 +143,14 @@ namespace Backet.Forms
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Tools.DeleteRepoFile(this.taskCard.repoName);
+            
             DialogResult result = MessageBox.Show("Are you sure you want to delete this Repo?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                Console.WriteLine("deleted");
-               /* Main.instance.InitCards();
-                this.Close();*/
+                Tools.DeleteRepoFile(this.taskCard.repoName);
+                Main.instance.InitCards();
+                this.Close();
             }
             else
             {

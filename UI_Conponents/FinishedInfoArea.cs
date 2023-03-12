@@ -1,12 +1,4 @@
-﻿using Backet.Properties;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Backet.UI_Conponents
@@ -18,9 +10,10 @@ namespace Backet.UI_Conponents
             InitializeComponent();
             InitStyle();
         }
-        private void InitDate()
+        public void InitDate(string endDate, string updateDate)
         {
-            
+            EndLabel.Text = "End: " + Tools.ISO8601ToDDMMYY(endDate);
+            UpdateDate.Text = "Last updated: " + Tools.ISO8601ToDDMMYY(updateDate);
         }
 
         private void InitStyle()
@@ -30,11 +23,6 @@ namespace Backet.UI_Conponents
             ComplateLabel.RectDisableColor = Color.Transparent;
             ComplateLabel.FillDisableColor = Color.FromArgb(193, 243, 213);
             ComplateLabel.ForeDisableColor = Color.FromArgb(1, 153, 56);
-            
-
-
-
-
         }
     }
 }

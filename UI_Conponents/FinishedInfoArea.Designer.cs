@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.ComplateLabel = new Sunny.UI.UISymbolButton();
-            this.uiLabel2 = new Sunny.UI.UILabel();
+            this.EndLabel = new Sunny.UI.UILabel();
             this.targetIcon = new Sunny.UI.UIAvatar();
             this.UpdateDate = new Sunny.UI.UILabel();
             this.SuspendLayout();
@@ -51,16 +51,16 @@
             this.ComplateLabel.Text = "Completed";
             this.ComplateLabel.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             // 
-            // uiLabel2
+            // EndLabel
             // 
-            this.uiLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel2.Location = new System.Drawing.Point(49, 10);
-            this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(201, 25);
-            this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLabel2.TabIndex = 11;
-            this.uiLabel2.Text = "End: Nov 12";
-            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EndLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndLabel.Location = new System.Drawing.Point(48, 9);
+            this.EndLabel.Name = "EndLabel";
+            this.EndLabel.Size = new System.Drawing.Size(201, 25);
+            this.EndLabel.Style = Sunny.UI.UIStyle.Custom;
+            this.EndLabel.TabIndex = 11;
+            this.EndLabel.Text = "End: Nov 12";
+            this.EndLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // targetIcon
             // 
@@ -79,6 +79,7 @@
             // 
             // UpdateDate
             // 
+            this.UpdateDate.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.UpdateDate.BackColor = System.Drawing.Color.Transparent;
             this.UpdateDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateDate.Location = new System.Drawing.Point(8, 76);
@@ -95,7 +96,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.Controls.Add(this.UpdateDate);
             this.Controls.Add(this.ComplateLabel);
-            this.Controls.Add(this.uiLabel2);
+            this.Controls.Add(this.EndLabel);
             this.Controls.Add(this.targetIcon);
             this.Name = "FinishedInfoArea";
             this.Size = new System.Drawing.Size(270, 111);
@@ -106,7 +107,7 @@
         #endregion
 
         private Sunny.UI.UISymbolButton ComplateLabel;
-        private Sunny.UI.UILabel uiLabel2;
+        private Sunny.UI.UILabel EndLabel;
         private Sunny.UI.UIAvatar targetIcon;
         private Sunny.UI.UILabel UpdateDate;
     }

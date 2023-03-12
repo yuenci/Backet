@@ -26,7 +26,6 @@ namespace Backet.UI_Conponents
         {
             this.repoName = repoName;
             this.cardInfo = Tools.GetRepoCardInfo(repoName);
-            InitBackground();
             InitLabels();
             InitIcons();
             InitProcessBar();
@@ -38,6 +37,7 @@ namespace Backet.UI_Conponents
             DateTimeIcon.ForeColor = Color.FromArgb(64, 64, 64);
             DateTimeIcon.FillColor = Color.Transparent;
             ProcessBar.RectColor = Color.FromArgb(1, 153, 56);
+            InitBackground();
         }
         private void InitBackground()
         {
@@ -57,13 +57,24 @@ namespace Backet.UI_Conponents
                 UpdateDate.Hide();
                 AddFinishedInfoArea();
             }
-            StartDate.Text = "Start: " + Tools.ISO8601ToDDMMYY(this.cardInfo[2]);
+
+            if (cardInfo[6].Contains("true"))
+            {
+                StartDate.Text = "Start:" + Tools.ISO8601ToDDMMYY(this.cardInfo[2]);
+            }
+            else if(cardInfo[6].Contains("null"))
+            {
+                StartDate.Text = "Todo:" + Tools.ISO8601ToDDMMYY(this.cardInfo[2]);
+                DateTimeIcon.Symbol = 73;
+            }
+
             UpdateDate.Text ="Last updated" +  Tools.ISO8601ToDDMMYY(this.cardInfo[3]);
         }
         private void AddFinishedInfoArea()
         {
             FinishedInfoArea finishedInfoArea = new FinishedInfoArea();
             finishedInfoArea.Location = new Point(1, 115);
+            finishedInfoArea.InitDate(this.cardInfo[3], this.cardInfo[7]);
             mainPanel.Controls.Add(finishedInfoArea);
         }
         private void InitIcons()

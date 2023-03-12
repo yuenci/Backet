@@ -196,6 +196,7 @@ namespace Backet
             string figma_url = "";
             string local_path = "";
             string complete = "";
+            string completeDate = "";
             for (int i =0; i< lines.Length; i++)
             {
                 string currentLine = lines[i];
@@ -245,14 +246,23 @@ namespace Backet
                     continue;
                 }
 
-                if (currentLine.Contains("complete"))
+                if (currentLine.Contains("complete\""))
                 {
                     complete = GetBoolFromJson(currentLine);
+                    continue;
+                }
+
+                if (currentLine.Contains("completeDate"))
+                {
+                    completeDate = GetTimeStampFromJson(currentLine);
                     break;
                 }
             }
 
-            string[] res = { full_name,private_status, created_at, updated_at, figma_url, local_path, complete };
+            string[] res = { full_name,private_status, 
+                            created_at, updated_at, 
+                            figma_url, local_path, 
+                            complete,completeDate };
             return res;
         }
 
