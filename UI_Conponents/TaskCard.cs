@@ -131,6 +131,8 @@ namespace Backet.UI_Conponents
             if (!IfTodoMdExist())
             {
                 ProcessBar.Value = 0;
+                ProcessBar.Cursor = Cursors.Hand;
+                ProcessBar.Click += new EventHandler(CreateTODOAndOpenIt);
                 return;
             }
             
@@ -193,6 +195,25 @@ namespace Backet.UI_Conponents
         private string GetLocalPath()
         {
             return cardInfo[5].Replace("//", "\\");
+        }
+
+        private void CreateTODOAndOpenIt(object sender, EventArgs e)
+        {
+            string filePath = GetLocalPath() + "\\TODO.md";
+            //Process.Start(filePath);  //error: busy or locked
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.ReadWrite))
+            {
+                // 使用文件流写入数据
+                using (var writer = new StreamWriter(fileStream))
+                {
+                    writer.WriteLine("- [ ] ");
+                }
+            }
+
+            // 启动进程
+            Process.Start(filePath);
+            Main.instance.InitCards();
         }
     }
 }

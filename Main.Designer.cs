@@ -36,7 +36,7 @@
             this.SearchTextBox = new Sunny.UI.UITextBox();
             this.SearchBtn = new Sunny.UI.UIAvatar();
             this.MenuBtn = new Sunny.UI.UIAvatar();
-            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.TaskIcon = new Sunny.UI.UILabel();
             this.TaskNum = new Sunny.UI.UIAvatar();
             this.TypeComboBox = new Sunny.UI.UIComboBox();
             this.SelectedTaskNum = new Sunny.UI.UIAvatar();
@@ -67,9 +67,7 @@
             this.Settings.AvatarSize = 55;
             this.Settings.BackColor = System.Drawing.Color.Transparent;
             this.Settings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Settings.FillColor = System.Drawing.Color.Transparent;
             this.Settings.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Settings.Location = new System.Drawing.Point(3, 5);
             this.Settings.MinimumSize = new System.Drawing.Size(1, 1);
             this.Settings.Name = "Settings";
@@ -126,7 +124,6 @@
             this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchTextBox.MinimumSize = new System.Drawing.Size(1, 16);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.RectColor = System.Drawing.Color.Transparent;
             this.SearchTextBox.ShowText = false;
             this.SearchTextBox.Size = new System.Drawing.Size(739, 29);
             this.SearchTextBox.Style = Sunny.UI.UIStyle.Custom;
@@ -161,9 +158,7 @@
             this.MenuBtn.AvatarSize = 55;
             this.MenuBtn.BackColor = System.Drawing.Color.Transparent;
             this.MenuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuBtn.FillColor = System.Drawing.Color.Transparent;
             this.MenuBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MenuBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MenuBtn.Location = new System.Drawing.Point(3, 7);
             this.MenuBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.MenuBtn.Name = "MenuBtn";
@@ -174,15 +169,17 @@
             this.MenuBtn.TabIndex = 7;
             this.MenuBtn.Text = "uiAvatar2";
             // 
-            // uiLabel1
+            // TaskIcon
             // 
-            this.uiLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel1.Location = new System.Drawing.Point(72, 90);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(70, 36);
-            this.uiLabel1.TabIndex = 7;
-            this.uiLabel1.Text = "Tasks";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TaskIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TaskIcon.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskIcon.Location = new System.Drawing.Point(72, 90);
+            this.TaskIcon.Name = "TaskIcon";
+            this.TaskIcon.Size = new System.Drawing.Size(68, 36);
+            this.TaskIcon.TabIndex = 7;
+            this.TaskIcon.Text = "Tasks";
+            this.TaskIcon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TaskIcon.Click += new System.EventHandler(this.TaskIcon_Click);
             // 
             // TaskNum
             // 
@@ -261,7 +258,7 @@
             this.Controls.Add(this.SelectedTaskNum);
             this.Controls.Add(this.TypeComboBox);
             this.Controls.Add(this.TaskNum);
-            this.Controls.Add(this.uiLabel1);
+            this.Controls.Add(this.TaskIcon);
             this.Controls.Add(this.uiPanel8);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.uiPanel7);
@@ -284,7 +281,7 @@
         private Sunny.UI.UIAvatar MenuBtn;
         private Sunny.UI.UITextBox SearchTextBox;
         private Sunny.UI.UIAvatar Settings;
-        private Sunny.UI.UILabel uiLabel1;
+        private Sunny.UI.UILabel TaskIcon;
         private Sunny.UI.UIAvatar TaskNum;
         private Sunny.UI.UIComboBox TypeComboBox;
         private Sunny.UI.UIAvatar SelectedTaskNum;

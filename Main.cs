@@ -23,7 +23,21 @@ namespace Backet
             instance = this;
             InitializeComponent();
             Tools.DetectDataFile();
+            InitStyle();
             InitCards();
+        }
+        private void InitStyle()
+        {
+            SearchBtn.FillColor = Color.Transparent;
+            MenuBtn.FillColor = Color.Transparent;
+            Settings.FillColor = Color.Transparent;
+
+            SearchBtn.ForeColor = Color.FromArgb(64, 64, 64);
+            MenuBtn.ForeColor = Color.FromArgb(64, 64, 64);
+            Settings.ForeColor = Color.FromArgb(64, 64, 64);
+
+            SearchTextBox.RectColor = Color.Transparent;
+
         }
 
         private void SearchTextBox_Enter(object sender, EventArgs e)
@@ -170,6 +184,11 @@ namespace Backet
             taskCardDict.Remove("Backet");
             AddCardToContainer("Backet");
             
+        }
+
+        private void TaskIcon_Click(object sender, EventArgs e)
+        {
+            InitCards();
         }
     }
 }

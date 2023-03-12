@@ -6,7 +6,7 @@
 - [x] Add star to star part
 - [x] Format datetime
 - [ ] Sort the cards(created date, update date, alpha)
-- [ ] Click Process bar open or create a TODO.md
+- [x] Click Process bar open or create a TODO.md
 - [ ] Web version for remote checking
 - [ ] Mobile version for convenient checking 
-- [ ]  Refresh button
+- [x] Refresh button
