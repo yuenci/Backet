@@ -18,6 +18,7 @@ using System.Net;
 using System.Drawing;
 using Svg;
 using Svg.Transforms;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace Backet
 {
@@ -393,43 +394,51 @@ namespace Backet
             string outputDateString = inputDate.ToString("dd MMM, yyyy", culture);
             return outputDateString;
         }
-        public static void LoadSvgImageFromLang(PictureBox pictureBox, string lang)
+        public static async Task LoadSvgImageFromLangAsync(PictureBox pictureBox, string lang)
         {
             string svgPath = $"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{lang}/{lang}-original.svg";
             //Console.WriteLine(svgPath);
+
             try
             {
-                new WebClient().OpenRead(svgPath);
-                LoadSvgImage(pictureBox, svgPath);
+                using (var webClient = new WebClient())
+                {
+                    using (var stream = await webClient.OpenReadTaskAsync(svgPath))
+                    {
+                        LoadSvgImage(pictureBox, stream);
+                    }
+                }
             }
             catch
             {
                 lang = FixLangName(lang);
                 svgPath = $"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{lang}/{lang}-original.svg";
-                LoadSvgImage(pictureBox, svgPath);
+
+                using (var webClient = new WebClient())
+                {
+                    using (var stream = await webClient.OpenReadTaskAsync(svgPath))
+                    {
+                        LoadSvgImage(pictureBox, stream);
+                    }
+                }
             }
         }
 
-        public static void LoadSvgImage(PictureBox pictureBox, string url)
+        public static void LoadSvgImage(PictureBox pictureBox, Stream stream)
         {
-            using (var client = new WebClient())
+            var svgDocument = SvgDocument.Open<SvgDocument>(stream);
+            var bitmap = svgDocument.Draw();
 
-            using (var stream = client.OpenRead(url))
+            if (pictureBox.InvokeRequired)
             {
-                var svgDocument = SvgDocument.Open<SvgDocument>(stream);
-                var bitmap = svgDocument.Draw();
-
-                if (pictureBox.InvokeRequired)
-                {
-                    pictureBox.Invoke((MethodInvoker)delegate
-                    {
-                        pictureBox.Image = ConvertBitmapToImage(bitmap);
-                    });
-                }
-                else
+                pictureBox.Invoke((MethodInvoker)delegate
                 {
                     pictureBox.Image = ConvertBitmapToImage(bitmap);
-                }
+                });
+            }
+            else
+            {
+                pictureBox.Image = ConvertBitmapToImage(bitmap);
             }
         }
 

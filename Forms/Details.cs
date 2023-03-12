@@ -62,15 +62,15 @@ namespace Backet.Forms
             }
             
             this.detailsInfo = Tools.GetRepoDetailsInfo(this.taskCard.repoName);
+            
+            string lang = this.detailsInfo[3].ToLower();
+            Tools.LoadSvgImageFromLangAsync(pictureBox1, lang);
+            
             descriptionLable.Text = this.detailsInfo[0];
             homepageLabel.Text = this.detailsInfo[1];
             issueLable.Text = this.detailsInfo[2];
             languageLabel.Text = this.detailsInfo[3];
             starLabel.Text = this.detailsInfo[4];
-
-            string lang = this.detailsInfo[3].ToLower();
-            Tools.LoadSvgImageFromLang(pictureBox1, lang);
-
         }
 
         private void InitLableEvent()
