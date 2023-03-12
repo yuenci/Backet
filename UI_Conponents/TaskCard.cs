@@ -58,7 +58,7 @@ namespace Backet.UI_Conponents
                 AddFinishedInfoArea();
             }
 
-            if (cardInfo[6].Contains("true"))
+            if (cardInfo[6].Contains("false"))
             {
                 StartDate.Text = "Start:" + Tools.ISO8601ToDDMMYY(this.cardInfo[2]);
             }
@@ -68,7 +68,7 @@ namespace Backet.UI_Conponents
                 DateTimeIcon.Symbol = 73;
             }
 
-            UpdateDate.Text ="Last updated" +  Tools.ISO8601ToDDMMYY(this.cardInfo[3]);
+            UpdateDate.Text ="Last updated: " +  Tools.ISO8601ToDDMMYY(this.cardInfo[3]);
         }
         private void AddFinishedInfoArea()
         {

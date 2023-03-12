@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Details));
             this.complereBtn = new Sunny.UI.UISymbolButton();
             this.MoreOptBtn = new Sunny.UI.UISymbolButton();
             this.repoName = new Sunny.UI.UILabel();
@@ -332,6 +333,7 @@
             this.Controls.Add(this.repoName);
             this.Controls.Add(this.MoreOptBtn);
             this.Controls.Add(this.complereBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -53,6 +53,17 @@ namespace Backet
             string file = LocalPath.Text;
             string taskStatus = "";
 
+            // if repo exist in local
+            string repoName = Tools.getRepoNameFromURL(repoURL);
+            string path = Tools.GetDataFilePath($"{repoName}.json");
+            bool isExist = Tools.IsPathExist(path);
+            if (isExist)
+            {
+                MessageBox.Show("This Repositorie Already Exist");
+                return;
+            }
+
+
             // if under modifier happen
             if (this.FigmaURLCache != "" || this.LocalPathCache != "")
             {
@@ -91,12 +102,7 @@ namespace Backet
             {
                 taskStatus=  TaskStatusComboBox.SelectedItem.ToString();
             }
-
-
-
-
-
-            string repoName = Tools.getRepoNameFromURL(repoURL);
+           
             string repoInfo = await Tools.GetRepoInfo(repoURL, Token.token);
             repoInfo = addFigmaURLAndPathToInfo(repoInfo, figma, file, taskStatus);
             Tools.WriteRepoJson(repoName, Tools.FormatJson(repoInfo));
