@@ -92,8 +92,10 @@
             this.RepoURL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RepoURL.MinimumSize = new System.Drawing.Size(1, 16);
             this.RepoURL.Name = "RepoURL";
+            this.RepoURL.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.RepoURL.ShowText = false;
             this.RepoURL.Size = new System.Drawing.Size(452, 29);
+            this.RepoURL.Style = Sunny.UI.UIStyle.Custom;
             this.RepoURL.TabIndex = 4;
             this.RepoURL.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.RepoURL.Watermark = "";
@@ -106,8 +108,10 @@
             this.FigmaURL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FigmaURL.MinimumSize = new System.Drawing.Size(1, 16);
             this.FigmaURL.Name = "FigmaURL";
+            this.FigmaURL.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.FigmaURL.ShowText = false;
             this.FigmaURL.Size = new System.Drawing.Size(452, 29);
+            this.FigmaURL.Style = Sunny.UI.UIStyle.Custom;
             this.FigmaURL.TabIndex = 5;
             this.FigmaURL.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.FigmaURL.Watermark = "";
@@ -120,8 +124,10 @@
             this.LocalPath.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LocalPath.MinimumSize = new System.Drawing.Size(1, 16);
             this.LocalPath.Name = "LocalPath";
+            this.LocalPath.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.LocalPath.ShowText = false;
             this.LocalPath.Size = new System.Drawing.Size(452, 29);
+            this.LocalPath.Style = Sunny.UI.UIStyle.Custom;
             this.LocalPath.TabIndex = 5;
             this.LocalPath.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.LocalPath.Watermark = "";
@@ -160,7 +166,9 @@
             this.TaskStatusComboBox.MinimumSize = new System.Drawing.Size(63, 0);
             this.TaskStatusComboBox.Name = "TaskStatusComboBox";
             this.TaskStatusComboBox.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.TaskStatusComboBox.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.TaskStatusComboBox.Size = new System.Drawing.Size(452, 29);
+            this.TaskStatusComboBox.Style = Sunny.UI.UIStyle.Custom;
             this.TaskStatusComboBox.TabIndex = 8;
             this.TaskStatusComboBox.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.TaskStatusComboBox.Watermark = "";

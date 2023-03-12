@@ -55,8 +55,10 @@
             this.TokenTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TokenTextBox.MinimumSize = new System.Drawing.Size(1, 16);
             this.TokenTextBox.Name = "TokenTextBox";
+            this.TokenTextBox.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.TokenTextBox.ShowText = false;
             this.TokenTextBox.Size = new System.Drawing.Size(390, 30);
+            this.TokenTextBox.Style = Sunny.UI.UIStyle.Custom;
             this.TokenTextBox.TabIndex = 1;
             this.TokenTextBox.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.TokenTextBox.Watermark = "";
@@ -64,7 +66,7 @@
             // uiLabel2
             // 
             this.uiLabel2.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uiLabel2.Location = new System.Drawing.Point(12, 114);
+            this.uiLabel2.Location = new System.Drawing.Point(12, 108);
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(110, 23);
             this.uiLabel2.TabIndex = 2;
@@ -75,12 +77,14 @@
             // 
             this.DataFoldTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.DataFoldTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataFoldTextBox.Location = new System.Drawing.Point(17, 152);
+            this.DataFoldTextBox.Location = new System.Drawing.Point(17, 136);
             this.DataFoldTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DataFoldTextBox.MinimumSize = new System.Drawing.Size(1, 16);
             this.DataFoldTextBox.Name = "DataFoldTextBox";
+            this.DataFoldTextBox.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
             this.DataFoldTextBox.ShowText = false;
             this.DataFoldTextBox.Size = new System.Drawing.Size(390, 30);
+            this.DataFoldTextBox.Style = Sunny.UI.UIStyle.Custom;
             this.DataFoldTextBox.TabIndex = 3;
             this.DataFoldTextBox.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.DataFoldTextBox.Watermark = "";
@@ -102,7 +106,7 @@
             // 
             this.OpenDataBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenDataBtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.OpenDataBtn.Location = new System.Drawing.Point(419, 152);
+            this.OpenDataBtn.Location = new System.Drawing.Point(419, 136);
             this.OpenDataBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.OpenDataBtn.Name = "OpenDataBtn";
             this.OpenDataBtn.Size = new System.Drawing.Size(53, 30);
