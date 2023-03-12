@@ -175,7 +175,7 @@ namespace Backet.UI_Conponents
             int done = 0;
             foreach(string line in data)
             {
-                if (line.Contains("- [x]"))
+                if (line.Contains("- [x]") || line.Contains("* [X]"))
                 {
                     done++;
                 }
