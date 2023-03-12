@@ -393,10 +393,27 @@ namespace Backet
             string outputDateString = inputDate.ToString("dd MMM, yyyy", culture);
             return outputDateString;
         }
+        public static void LoadSvgImageFromLang(PictureBox pictureBox, string lang)
+        {
+            string svgPath = $"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{lang}/{lang}-original.svg";
+            //Console.WriteLine(svgPath);
+            try
+            {
+                new WebClient().OpenRead(svgPath);
+                LoadSvgImage(pictureBox, svgPath);
+            }
+            catch
+            {
+                lang = FixLangName(lang);
+                svgPath = $"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{lang}/{lang}-original.svg";
+                LoadSvgImage(pictureBox, svgPath);
+            }
+        }
 
         public static void LoadSvgImage(PictureBox pictureBox, string url)
         {
             using (var client = new WebClient())
+
             using (var stream = client.OpenRead(url))
             {
                 var svgDocument = SvgDocument.Open<SvgDocument>(stream);

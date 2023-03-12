@@ -68,10 +68,8 @@ namespace Backet.Forms
             languageLabel.Text = this.detailsInfo[3];
             starLabel.Text = this.detailsInfo[4];
 
-            string lang = Tools.FixLangName(this.detailsInfo[3].ToLower());
-            string svgPath = $"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{lang}/{lang}-original.svg";
-            Console.WriteLine(svgPath);
-            Tools.LoadSvgImage(pictureBox1, svgPath);
+            string lang = this.detailsInfo[3].ToLower();
+            Tools.LoadSvgImageFromLang(pictureBox1, lang);
 
         }
 
