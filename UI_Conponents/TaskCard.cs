@@ -53,10 +53,17 @@ namespace Backet.UI_Conponents
                 AddIcons("figma");
             }
 
+            if (IfTodoMdExist())
+            {
+                AddIcons("todo");
+            }
+
             if (cardInfo[5] != "")
             {
                 AddIcons("file");
             }
+
+            
             
         }
 
@@ -75,7 +82,10 @@ namespace Backet.UI_Conponents
             {
                 image = Properties.Resources.fileIcon;
             }
-
+            else if (iconName == "todo")
+            {
+                image = Properties.Resources.todoIcon;
+            }
 
             PictureBox pictureBox = new PictureBox
             {
@@ -98,6 +108,10 @@ namespace Backet.UI_Conponents
             {
                 pictureBox.Click += new EventHandler(File_icon_Click);
             }
+            else if (iconName == "todo")
+            {
+                pictureBox.Click += new EventHandler(Todo_icon_Click);
+            }
 
             IconsPanel.Controls.Add(pictureBox);
         }
@@ -105,7 +119,7 @@ namespace Backet.UI_Conponents
 
         private void InitProcessBar()
         {
-            string todoPath = GetLocalPath() + "\\TODO.md";
+            
 
             if (cardInfo[6].Contains("true"))
             {
@@ -114,13 +128,13 @@ namespace Backet.UI_Conponents
             }
 
             
-            if (!Tools.IsPathExist(todoPath))
+            if (!IfTodoMdExist())
             {
                 ProcessBar.Value = 0;
                 return;
             }
             
-            
+            string todoPath = GetLocalPath() + "\\TODO.md";
             string[] data = File.ReadAllLines(todoPath);
             int allTodos = data.Length;
             int done = 0;
@@ -133,6 +147,12 @@ namespace Backet.UI_Conponents
             }
             int result = (int)(((double)done / allTodos) * 100);
             ProcessBar.Value = result;
+        }
+
+        private bool IfTodoMdExist()
+        {
+            string todoPath = GetLocalPath() + "\\TODO.md";
+            return Tools.IsPathExist(todoPath);
         }
 
 
@@ -161,6 +181,13 @@ namespace Backet.UI_Conponents
             string filePath = GetLocalPath();
             //Console.WriteLine(filePath);
             Process.Start("explorer.exe", $"/select,\"{filePath}\"");
+        }
+
+        private void Todo_icon_Click(object sender, EventArgs e)
+        {
+            string filePath = GetLocalPath() + "\\TODO.md";
+            //Process.Start("explorer.exe", $"/select,\"{filePath}\"");
+            Process.Start(filePath);
         }
 
         private string GetLocalPath()

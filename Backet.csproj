@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.md" />
+    <None Include="Resources\todoIcon.png" />
     <None Include="Resources\logoRoundCorner.png" />
     <None Include="Resources\logoFormangae.png" />
   </ItemGroup>
