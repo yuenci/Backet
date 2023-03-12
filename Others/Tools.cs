@@ -414,6 +414,10 @@ namespace Backet
 
         public static string ISO8601ToDDMMYY(string inputDateString)
         {
+            if (inputDateString == "")
+            {
+                return "";
+            }
             DateTime inputDate = DateTime.Parse(inputDateString);
             CultureInfo culture = new CultureInfo("en-US");
             string outputDateString = inputDate.ToString("dd MMM, yyyy", culture);

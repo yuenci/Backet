@@ -74,7 +74,7 @@ namespace Backet.UI_Conponents
         {
             FinishedInfoArea finishedInfoArea = new FinishedInfoArea();
             finishedInfoArea.Location = new Point(1, 115);
-            finishedInfoArea.InitDate(this.cardInfo[3], this.cardInfo[7]);
+            finishedInfoArea.InitDate(this.cardInfo[7], this.cardInfo[3]);
             mainPanel.Controls.Add(finishedInfoArea);
         }
         private void InitIcons()
