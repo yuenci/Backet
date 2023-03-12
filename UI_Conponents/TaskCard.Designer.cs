@@ -32,7 +32,7 @@
             this.UpdateDate = new Sunny.UI.UILabel();
             this.ProcessBar = new Sunny.UI.UIProcessBar();
             this.StartDate = new Sunny.UI.UILabel();
-            this.uiAvatar2 = new Sunny.UI.UIAvatar();
+            this.DateTimeIcon = new Sunny.UI.UIAvatar();
             this.TaskName = new Sunny.UI.UILabel();
             this.IconsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.mainPanel.SuspendLayout();
@@ -43,7 +43,7 @@
             this.mainPanel.Controls.Add(this.UpdateDate);
             this.mainPanel.Controls.Add(this.ProcessBar);
             this.mainPanel.Controls.Add(this.StartDate);
-            this.mainPanel.Controls.Add(this.uiAvatar2);
+            this.mainPanel.Controls.Add(this.DateTimeIcon);
             this.mainPanel.Controls.Add(this.TaskName);
             this.mainPanel.Controls.Add(this.IconsPanel);
             this.mainPanel.Cursor = System.Windows.Forms.Cursors.Default;
@@ -80,7 +80,7 @@
             this.ProcessBar.Location = new System.Drawing.Point(16, 169);
             this.ProcessBar.MinimumSize = new System.Drawing.Size(70, 3);
             this.ProcessBar.Name = "ProcessBar";
-            this.ProcessBar.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(154)))), ((int)(((byte)(54)))));
+            this.ProcessBar.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(153)))), ((int)(((byte)(56)))));
             this.ProcessBar.Size = new System.Drawing.Size(249, 7);
             this.ProcessBar.Style = Sunny.UI.UIStyle.Custom;
             this.ProcessBar.TabIndex = 7;
@@ -98,22 +98,22 @@
             this.StartDate.Text = "Start: Nov 12";
             this.StartDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiAvatar2
+            // DateTimeIcon
             // 
-            this.uiAvatar2.AvatarSize = 25;
-            this.uiAvatar2.BackColor = System.Drawing.Color.Transparent;
-            this.uiAvatar2.FillColor = System.Drawing.Color.Transparent;
-            this.uiAvatar2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiAvatar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.uiAvatar2.Location = new System.Drawing.Point(9, 124);
-            this.uiAvatar2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiAvatar2.Name = "uiAvatar2";
-            this.uiAvatar2.Size = new System.Drawing.Size(30, 30);
-            this.uiAvatar2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiAvatar2.Symbol = 57379;
-            this.uiAvatar2.SymbolSize = 25;
-            this.uiAvatar2.TabIndex = 5;
-            this.uiAvatar2.Text = "uiAvatar2";
+            this.DateTimeIcon.AvatarSize = 25;
+            this.DateTimeIcon.BackColor = System.Drawing.Color.Transparent;
+            this.DateTimeIcon.FillColor = System.Drawing.Color.Transparent;
+            this.DateTimeIcon.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DateTimeIcon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.DateTimeIcon.Location = new System.Drawing.Point(9, 124);
+            this.DateTimeIcon.MinimumSize = new System.Drawing.Size(1, 1);
+            this.DateTimeIcon.Name = "DateTimeIcon";
+            this.DateTimeIcon.Size = new System.Drawing.Size(30, 30);
+            this.DateTimeIcon.Style = Sunny.UI.UIStyle.Custom;
+            this.DateTimeIcon.Symbol = 57379;
+            this.DateTimeIcon.SymbolSize = 25;
+            this.DateTimeIcon.TabIndex = 5;
+            this.DateTimeIcon.Text = "uiAvatar2";
             // 
             // TaskName
             // 
@@ -158,6 +158,6 @@
         private Sunny.UI.UILabel UpdateDate;
         private Sunny.UI.UIProcessBar ProcessBar;
         private Sunny.UI.UILabel StartDate;
-        private Sunny.UI.UIAvatar uiAvatar2;
+        private Sunny.UI.UIAvatar DateTimeIcon;
     }
 }

@@ -31,6 +31,13 @@ namespace Backet.UI_Conponents
             InitIcons();
             InitProcessBar();
             Main.instance.AddNameAndStatusToMap(repoName, cardInfo[6]);
+            InitStyle();
+        }
+        private void InitStyle()
+        {
+            DateTimeIcon.ForeColor = Color.FromArgb(64, 64, 64);
+            DateTimeIcon.FillColor = Color.Transparent;
+            ProcessBar.RectColor = Color.FromArgb(1, 153, 56);
         }
         private void InitBackground()
         {
@@ -42,8 +49,22 @@ namespace Backet.UI_Conponents
         private void InitLabels()
         {
             TaskName.Text = this.repoName;
+
+            if (cardInfo[6].Contains("true")) 
+            {
+                StartDate.Hide();
+                DateTimeIcon.Hide();
+                UpdateDate.Hide();
+                AddFinishedInfoArea();
+            }
             StartDate.Text = "Start: " + Tools.ISO8601ToDDMMYY(this.cardInfo[2]);
             UpdateDate.Text ="Last updated" +  Tools.ISO8601ToDDMMYY(this.cardInfo[3]);
+        }
+        private void AddFinishedInfoArea()
+        {
+            FinishedInfoArea finishedInfoArea = new FinishedInfoArea();
+            finishedInfoArea.Location = new Point(1, 115);
+            mainPanel.Controls.Add(finishedInfoArea);
         }
         private void InitIcons()
         {
@@ -123,7 +144,8 @@ namespace Backet.UI_Conponents
 
             if (cardInfo[6].Contains("true"))
             {
-                ProcessBar.Value = 100;
+                //ProcessBar.Value = 100;
+                ProcessBar.Hide();
                 return;
             }
 

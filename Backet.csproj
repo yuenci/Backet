@@ -107,6 +107,12 @@
     </Compile>
     <Compile Include="Token.cs" />
     <Compile Include="Others\Tools.cs" />
+    <Compile Include="UI_Conponents\FinishedInfoArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_Conponents\FinishedInfoArea.Designer.cs">
+      <DependentUpon>FinishedInfoArea.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Conponents\TaskCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\SunnyUIComponents.resx">
       <DependentUpon>SunnyUIComponents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Conponents\FinishedInfoArea.resx">
+      <DependentUpon>FinishedInfoArea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Conponents\TaskCard.resx">
       <DependentUpon>TaskCard.cs</DependentUpon>

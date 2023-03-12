@@ -10,3 +10,4 @@
 - [ ] Web version for remote checking
 - [ ] Mobile version for convenient checking 
 - [x] Refresh button
+- [x] Finished card

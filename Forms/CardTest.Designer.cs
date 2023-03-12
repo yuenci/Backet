@@ -30,11 +30,11 @@
         {
             this.taskCard1 = new Backet.UI_Conponents.TaskCard();
             this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.TaskName = new Sunny.UI.UILabel();
-            this.IconsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiAvatar1 = new Sunny.UI.UIAvatar();
-            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.TaskName = new Sunny.UI.UILabel();
+            this.IconsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.uiPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,32 +66,31 @@
             this.uiPanel1.Size = new System.Drawing.Size(280, 230);
             this.uiPanel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel1.TabIndex = 3;
+            this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TaskName
+            // uiSymbolButton1
             // 
-            this.TaskName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaskName.Location = new System.Drawing.Point(12, 67);
-            this.TaskName.Name = "TaskName";
-            this.TaskName.Size = new System.Drawing.Size(253, 45);
-            this.TaskName.Style = Sunny.UI.UIStyle.Custom;
-            this.TaskName.TabIndex = 1;
-            this.TaskName.Text = "uiLabel1uiLabel1uiLabel1uiLabel1uiLabel1";
-            this.TaskName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IconsPanel
-            // 
-            this.IconsPanel.Location = new System.Drawing.Point(16, 13);
-            this.IconsPanel.Name = "IconsPanel";
-            this.IconsPanel.Size = new System.Drawing.Size(180, 35);
-            this.IconsPanel.TabIndex = 0;
+            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiSymbolButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.uiSymbolButton1.Location = new System.Drawing.Point(16, 185);
+            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton1.Name = "uiSymbolButton1";
+            this.uiSymbolButton1.Radius = 10;
+            this.uiSymbolButton1.Size = new System.Drawing.Size(131, 25);
+            this.uiSymbolButton1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiSymbolButton1.Symbol = 78;
+            this.uiSymbolButton1.TabIndex = 4;
+            this.uiSymbolButton1.Text = "Completed";
+            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             // 
             // uiLabel2
             // 
             this.uiLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel2.Location = new System.Drawing.Point(48, 138);
+            this.uiLabel2.Location = new System.Drawing.Point(48, 140);
             this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(201, 23);
+            this.uiLabel2.Size = new System.Drawing.Size(201, 25);
             this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
             this.uiLabel2.TabIndex = 8;
             this.uiLabel2.Text = "End: Nov 12";
@@ -112,25 +111,23 @@
             this.uiAvatar1.TabIndex = 7;
             this.uiAvatar1.Text = "uiAvatar1";
             // 
-            // uiSymbolButton1
+            // TaskName
             // 
-            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(243)))), ((int)(((byte)(213)))));
-            this.uiSymbolButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiSymbolButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(153)))), ((int)(((byte)(56)))));
-            this.uiSymbolButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.uiSymbolButton1.Location = new System.Drawing.Point(16, 185);
-            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton1.Name = "uiSymbolButton1";
-            this.uiSymbolButton1.Radius = 10;
-            this.uiSymbolButton1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(243)))), ((int)(((byte)(213)))));
-            this.uiSymbolButton1.Size = new System.Drawing.Size(131, 25);
-            this.uiSymbolButton1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiSymbolButton1.Symbol = 78;
-            this.uiSymbolButton1.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(153)))), ((int)(((byte)(56)))));
-            this.uiSymbolButton1.TabIndex = 4;
-            this.uiSymbolButton1.Text = "Completed";
-            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TaskName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskName.Location = new System.Drawing.Point(12, 67);
+            this.TaskName.Name = "TaskName";
+            this.TaskName.Size = new System.Drawing.Size(253, 45);
+            this.TaskName.Style = Sunny.UI.UIStyle.Custom;
+            this.TaskName.TabIndex = 1;
+            this.TaskName.Text = "uiLabel1uiLabel1uiLabel1uiLabel1uiLabel1";
+            this.TaskName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IconsPanel
+            // 
+            this.IconsPanel.Location = new System.Drawing.Point(16, 13);
+            this.IconsPanel.Name = "IconsPanel";
+            this.IconsPanel.Size = new System.Drawing.Size(180, 35);
+            this.IconsPanel.TabIndex = 0;
             // 
             // CardTest
             // 
