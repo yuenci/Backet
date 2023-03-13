@@ -20,6 +20,7 @@ using Svg;
 using Svg.Transforms;
 using System.Runtime.InteropServices.ComTypes;
 using System.Net.NetworkInformation;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Backet
 {
@@ -111,10 +112,31 @@ namespace Backet
             }
             else
             {
-                Console.WriteLine("Data Folder exist");
+                //Console.WriteLine("Data Folder exist");
             }
         }
-        
+        static public void DetectSettingsFile()
+        {
+            string settingsFilePath = GetDataFilePath("settings.txt");
+            if (!File.Exists(settingsFilePath))
+            {
+                using (var fileStream = new FileStream(settingsFilePath, FileMode.Create, FileAccess.Write, FileShare.ReadWrite))
+                {
+                    using (var writer = new StreamWriter(fileStream))
+                    {
+                        Others.Settings settings = new Others.Settings();
+                        string json = JsonConvert.SerializeObject(settings);
+                        writer.WriteLine(json);
+                    }
+                }
+            }
+            else
+            {
+                //Console.WriteLine("Settings File exist");
+            }
+        }
+
+
         static public bool DetectTokenFile()
         {
             string filePath = GetDataFilePath("token.txt");

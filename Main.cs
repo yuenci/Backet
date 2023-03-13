@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using Backet.Forms;
+using Sunny.UI;
 
 namespace Backet
 {
@@ -26,10 +27,12 @@ namespace Backet
             instance = this;
             InitializeComponent();
             Tools.DetectDataFile();
+            Tools.DetectSettingsFile();
             isTokenExist = Tools.DetectTokenFile();
             InitStyle();
             InitToken();
             InitCards();
+            InitSettings();
         }
         private void InitToken()
         {
@@ -41,6 +44,16 @@ namespace Backet
                 new Settings().ShowDialog();
             }
 
+        }
+        private void InitSettings()
+        {
+            string settingsFilePath = Tools.GetDataFilePath("settings.txt");
+            string jsonData = File.ReadAllText(settingsFilePath);
+            Others.Settings settings = Newtonsoft.Json.JsonConvert.DeserializeObject<Others.Settings>(jsonData);
+
+            //Console.WriteLine(settings.Status);
+            InitStatusCombobox(settings.Status);
+            FilterCardsAccordToStatus();
         }
         private void InitStyle()
         {
@@ -93,13 +106,6 @@ namespace Backet
 
             for (int i=0;i< taskNumber; i++)
             {
-                /* TaskCard taskCard = new TaskCard();
-                 taskCard.InitCard(repoNames[i]);
-                 taskCard.Margin = new Padding(0, 0, 11, 0);
-                 CardContainer.Controls.Add(taskCard);
-
-                 taskCardDict.Add(repoNames[i], taskCard);*/
-                //if (repoNames[i] == "token") continue;
                 AddCardToContainer(repoNames[i]);
             }
         }
@@ -154,9 +160,19 @@ namespace Backet
 
         private void TypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            FilterCardsAccordToStatus();
+
+            // Change Setting local cache;
+            string selectedText = TypeComboBox.SelectedItem.ToString();
+            ChangeSettingStatus(selectedText.ToLower());
+            
+        }
+
+        private void FilterCardsAccordToStatus()
+        {
             int selectedIndex = TypeComboBox.SelectedIndex;
             CardContainer.Controls.Clear();
-            if (selectedIndex ==0)
+            if (selectedIndex == 0)
             {
                 SelectedTaskNum.Text = taskNumberCashe.ToString();
                 ICollection<TaskCard> cards = taskCardDict.Values;
@@ -214,6 +230,36 @@ namespace Backet
         {
             Settings settings = new Settings();
             settings.ShowDialog();
+        }
+
+        private void InitStatusCombobox(string status)
+        {
+            if (status =="all")
+            {
+                TypeComboBox.SelectedIndex = 0;
+            } 
+            else if (status == "todo")
+            {
+                TypeComboBox.SelectedIndex = 1;
+            }
+            else if (status == "in progress")
+            {
+                TypeComboBox.SelectedIndex = 2;
+            }
+            else if (status == "done")
+            {
+                TypeComboBox.SelectedIndex = 3;
+            }
+        }
+
+        private void ChangeSettingStatus(string status)
+        {
+            Others.Settings settings = new Others.Settings
+            {
+                Status = status
+            };
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(settings);
+            File.WriteAllText(Tools.GetDataFilePath("settings.txt"), json);
         }
     }
 }
