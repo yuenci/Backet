@@ -12,3 +12,4 @@
 - [x] Refresh button
 - [x] Finished card
 - [x] fix: can't update after change visibility;
+- [ ] fix: refresh will lose status after add new card

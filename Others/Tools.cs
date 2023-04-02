@@ -21,6 +21,7 @@ using Svg.Transforms;
 using System.Runtime.InteropServices.ComTypes;
 using System.Net.NetworkInformation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Backet.UI_Conponents;
 
 namespace Backet
 {
@@ -518,6 +519,38 @@ namespace Backet
                 default:
                     return "csharp";
             }
+        }
+
+        public static string[] SortCard(Dictionary<string, TaskCard> taskCardDict,int type )
+        {
+            // type = create, update, alphabet
+            // sort = asce, desc
+
+            if (type ==0)
+            {
+                return taskCardDict.OrderBy(x => x.Value.cardInfo[2]).Select(x => x.Key).ToArray();
+            }
+            else if (type ==1)
+            {
+                return taskCardDict.OrderByDescending(x => x.Value.cardInfo[2]).Select(x => x.Key).ToArray();
+            }
+            else if (type == 2)
+            {
+                return taskCardDict.OrderByDescending(x => x.Value.cardInfo[3]).Select(x => x.Key).ToArray();
+            }
+            else if (type == 3)
+            {
+                return taskCardDict.OrderByDescending(x => x.Value.cardInfo[3]).Select(x => x.Key).ToArray();
+            }
+            else if (type == 4)
+            {
+                return taskCardDict.OrderBy(x => x.Key).Select(x => x.Key).ToArray();
+            }
+            else if (type == 5)
+            {
+                return taskCardDict.OrderByDescending(x => x.Key).Select(x => x.Key).ToArray();
+            }
+            return null;
         }
     }
 }

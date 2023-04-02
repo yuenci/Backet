@@ -41,6 +41,7 @@
             this.TypeComboBox = new Sunny.UI.UIComboBox();
             this.SelectedTaskNum = new Sunny.UI.UIAvatar();
             this.CardContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.sortedComboBox = new Sunny.UI.UIComboBox();
             this.uiPanel7.SuspendLayout();
             this.uiPanel8.SuspendLayout();
             this.SuspendLayout();
@@ -247,12 +248,39 @@
             this.CardContainer.Size = new System.Drawing.Size(929, 515);
             this.CardContainer.TabIndex = 11;
             // 
+            // sortedComboBox
+            // 
+            this.sortedComboBox.DataSource = null;
+            this.sortedComboBox.FillColor = System.Drawing.Color.White;
+            this.sortedComboBox.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.sortedComboBox.Items.AddRange(new object[] {
+            "↑ Create",
+            "↓ Create",
+            "↑ Update",
+            "↓ Update",
+            "↑ Alphabet",
+            "↓ Alphabet"});
+            this.sortedComboBox.Location = new System.Drawing.Point(871, 97);
+            this.sortedComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.sortedComboBox.MinimumSize = new System.Drawing.Size(63, 0);
+            this.sortedComboBox.Name = "sortedComboBox";
+            this.sortedComboBox.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.sortedComboBox.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(231)))));
+            this.sortedComboBox.RectSize = 2;
+            this.sortedComboBox.Size = new System.Drawing.Size(132, 29);
+            this.sortedComboBox.Style = Sunny.UI.UIStyle.Custom;
+            this.sortedComboBox.TabIndex = 10;
+            this.sortedComboBox.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sortedComboBox.Watermark = "";
+            this.sortedComboBox.SelectedIndexChanged += new System.EventHandler(this.sortedComboBox_SelectedIndexChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1034, 661);
+            this.Controls.Add(this.sortedComboBox);
             this.Controls.Add(this.CardContainer);
             this.Controls.Add(this.SelectedTaskNum);
             this.Controls.Add(this.TypeComboBox);
@@ -286,6 +314,7 @@
         private Sunny.UI.UIComboBox TypeComboBox;
         private Sunny.UI.UIAvatar SelectedTaskNum;
         public System.Windows.Forms.FlowLayoutPanel CardContainer;
+        private Sunny.UI.UIComboBox sortedComboBox;
     }
 }
 

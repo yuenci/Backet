@@ -261,5 +261,21 @@ namespace Backet
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(settings);
             File.WriteAllText(Tools.GetDataFilePath("settings.txt"), json);
         }
+
+        private void sortedComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // type = create, update, alphabet
+            // sort = asce, desc
+            
+            int index = sortedComboBox.SelectedIndex;
+            if (index < 0) return;
+
+            string[] sortedCardName = Tools.SortCard(taskCardDict, index);
+            CardContainer.Controls.Clear();
+            foreach (string name in sortedCardName)
+            {
+                CardContainer.Controls.Add(taskCardDict[name]);
+            }
+        }
     }
 }
