@@ -18,6 +18,7 @@ namespace Backet
     public partial class Main : Form
     {
         public Dictionary<string, TaskCard> taskCardDict = new Dictionary<string, TaskCard>();
+        public Dictionary<string, TaskCard> filterCardDict = new Dictionary<string, TaskCard>();
         public Dictionary<string, string> taskCardStatus = new Dictionary<string, string>();
         public static Main instance;
         int taskNumberCashe = 0;
@@ -32,7 +33,7 @@ namespace Backet
             InitStyle();
             InitToken();
             InitCards();
-            InitSettings();
+            //InitSettings();
         }
         private void InitToken()
         {
@@ -45,7 +46,7 @@ namespace Backet
             }
 
         }
-        private void InitSettings()
+        public void InitSettings()
         {
             string settingsFilePath = Tools.GetDataFilePath("settings.txt");
             string jsonData = File.ReadAllText(settingsFilePath);
@@ -108,6 +109,8 @@ namespace Backet
             {
                 AddCardToContainer(repoNames[i]);
             }
+            filterCardDict = new Dictionary<string, TaskCard>(taskCardDict);
+            InitSettings();
         }
 
         public void AddCardToContainer(string repoNames)
@@ -198,12 +201,14 @@ namespace Backet
         private void AddStatusCardToPanel(string type)
         {
             int num = 0;
+            filterCardDict.Clear();
             foreach (KeyValuePair<string, string> kvp in taskCardStatus)
             {
                 if (kvp.Value == type)
                 {
                     TaskCard taskCard = taskCardDict[kvp.Key];
                     CardContainer.Controls.Add(taskCard);
+                    filterCardDict.Add(kvp.Key, taskCard);
                     num++;
                 }
 
@@ -270,7 +275,7 @@ namespace Backet
             int index = sortedComboBox.SelectedIndex;
             if (index < 0) return;
 
-            string[] sortedCardName = Tools.SortCard(taskCardDict, index);
+            string[] sortedCardName = Tools.SortCard(filterCardDict, index);
             CardContainer.Controls.Clear();
             foreach (string name in sortedCardName)
             {
